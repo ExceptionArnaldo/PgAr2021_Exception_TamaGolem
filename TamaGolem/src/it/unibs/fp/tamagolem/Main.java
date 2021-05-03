@@ -1,8 +1,11 @@
 package it.unibs.fp.tamagolem;
 
+import it.unibs.fp.mylib.NumeriCasuali;
+
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+
+        Equilibrio.setup();
     }
 }
