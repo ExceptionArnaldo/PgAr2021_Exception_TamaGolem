@@ -43,21 +43,28 @@ public class Grafo {
             danno_attuale += mat_ad[i][h];
         }
 
-        int danno = NumeriCasuali.estraiIntero(1, 10); // crea un danno casuale
+        int danno = 0;
         int eff = NumeriCasuali.estraiIntero(0, 1); // efficienza del danno, se è 1 il danno è positivo, 0 il danno è negativo
 
         if (i == j) mat_ad[i][j] = 0;
+        else {
+            if (i < j)
+                danno = NumeriCasuali.estraiIntero(1, 10 - Math.abs(danno_attuale) - (mat_ad.length - j - 1)); // crea un danno casuale
+            if (i > j)
+                danno = NumeriCasuali.estraiIntero(1, 10 - Math.abs(danno_attuale) - (mat_ad.length - j - 2));
 
-        else if (j == mat_ad.length - 1) { // se arriva all'ultima colonna
-            mat_ad[i][j] = -danno_attuale;
-            mat_ad[j][i] = danno_attuale;
-        } else {
-            if (eff == 0) {
-                mat_ad[i][j] = -danno;
-                mat_ad[j][i] = danno;
-            } else {
-                mat_ad[j][i] = -danno;
-                mat_ad[i][j] = danno;
+            if (j == mat_ad.length - 1) { // se arriva all'ultima colonna
+                mat_ad[i][j] = -danno_attuale;
+                mat_ad[j][i] = danno_attuale;
+            }
+            else {
+                if (eff == 0) {
+                    mat_ad[i][j] = -danno;
+                    mat_ad[j][i] = danno;
+                } else {
+                    mat_ad[j][i] = -danno;
+                    mat_ad[i][j] = danno;
+                }
             }
         }
     }
