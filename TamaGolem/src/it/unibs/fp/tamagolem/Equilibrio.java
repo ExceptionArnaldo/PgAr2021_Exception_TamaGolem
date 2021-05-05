@@ -8,9 +8,6 @@ import java.util.ArrayList;
 public class Equilibrio {
 
     private final static int MIN_ELEMENTI = 3;
-    private final static int MAX_ELEMENTI = 8;
-
-    private final static String[] ELEMENI_NOMI = {"fuoco", "erba", "acqua", "buio", "elettro", "folletto", "spettro", "yes"};
 
     private static int numero_elementi;
 
@@ -33,7 +30,8 @@ public class Equilibrio {
 
         do { // aggiunge i nodi
             random = (int) (Math.random() * numero_elementi);
-            Nodo n = new Nodo(ELEMENI_NOMI[random]); // crea un nodo con nome casuale di un elemento
+
+            Nodo n = new Nodo(Elemento.elementoPerId(random)); // crea un nodo con nome casuale di un elemento
 
             if (!n.esisteNodo(nodi)) { // se il nodo esiste non esiste lo aggiunge all'arrayList di nodi
                 nodi.add(n);
@@ -74,6 +72,6 @@ public class Equilibrio {
 
     // restituisce il numero di elementi
     private static int creaNumeroElemento() {
-        return NumeriCasuali.estraiIntero(MIN_ELEMENTI, MAX_ELEMENTI);
+        return NumeriCasuali.estraiIntero(MIN_ELEMENTI, Elemento.values().length);
     }
 }

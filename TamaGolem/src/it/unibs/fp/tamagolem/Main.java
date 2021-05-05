@@ -1,7 +1,8 @@
 package it.unibs.fp.tamagolem;
 
 import it.unibs.fp.mylib.NumeriCasuali;
-import java.util.ArrayList;
+
+import java.util.*;
 
 public class Main {
 
