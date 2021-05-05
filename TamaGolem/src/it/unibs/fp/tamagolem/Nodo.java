@@ -24,8 +24,6 @@ public class Nodo {
         for (int i = 0; i < nodi.size(); i++) {
             if (nodi.get(i).getNome().equals(this.nome)) return true;
         }
-
         return false;
-
     }
 }

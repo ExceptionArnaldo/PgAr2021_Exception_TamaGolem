@@ -18,7 +18,7 @@ public class Equilibrio {
 
     public static void setup() {
 
-        numero_elementi = creaNumeriElementi();
+        numero_elementi = creaNumeroElemento();
         setGrafo();
         setEquilibrio();
         stampaMatrice();
@@ -73,7 +73,7 @@ public class Equilibrio {
     }
 
     // restituisce il numero di elementi
-    private static int creaNumeriElementi() {
+    private static int creaNumeroElemento() {
         return NumeriCasuali.estraiIntero(MIN_ELEMENTI, MAX_ELEMENTI);
     }
 }
