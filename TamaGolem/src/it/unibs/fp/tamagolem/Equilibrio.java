@@ -27,7 +27,7 @@ public class Equilibrio {
     // metodo pre creare il grafo
     public static void setGrafo() {
 
-        ArrayList<Nodo> nodi = new ArrayList<Nodo>();
+        ArrayList<Nodo> nodi = new ArrayList<>();
         int random;
         int numero_nodi = 0;
 
@@ -63,10 +63,10 @@ public class Equilibrio {
     public static void stampaMatrice() {
 
         int[][] mat_equi = grafo.getMat_ad();
-        System.out.println("");
+        System.out.println();
         for (int i = 0; i < mat_equi.length; i++) {
             for (int j = 0; j < mat_equi.length; j++) {
-                System.out.print(String.format("%3d ", mat_equi[i][j]));
+                System.out.printf("%3d ", mat_equi[i][j]);
             }
             System.out.println(" ");
         }
