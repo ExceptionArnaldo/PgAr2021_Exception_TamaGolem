@@ -3,6 +3,7 @@ package it.unibs.fp.tamagolem;
 import it.unibs.fp.mylib.NumeriCasuali;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Grafo {
 
@@ -112,10 +113,11 @@ public class Grafo {
             while(danno == 0 ||  danno > valore_max_a || danno < valore_min_a ||
                     -danno > valore_max_s || -danno < valore_min_s ||
                     ((j == mat_ad.length - 2) && danno_attuale + danno == 0) ||
-                    ((j == mat_ad.length - 3) && (i == mat_ad.length - 2) && danno_s - danno == 0));
+                    ((j == mat_ad.length - 2) && (i == mat_ad.length - 3) && danno_s - danno == 0));
 
             mat_ad[i][j] = danno;
             mat_ad[j][i] = -danno;
         }
     }
+
 }
