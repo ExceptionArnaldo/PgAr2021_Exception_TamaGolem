@@ -24,9 +24,9 @@ public class Battaglia {
 
             while (g1.getGolem().getVita_attuale() != 0 && g2.getGolem().getVita_attuale() != 0) { // fino a quando i TamaGolem sono entrambi vivi
 
-                Elemento pietra1 = g1.getGolem().getPietre().element(); // lancia le due pietre, da rivedere e capire bene
-                Elemento pietra2 = g2.getGolem().getPietre().element();
-                int danno = Grafo.getMat_ad()[pietra1.getId()][pietra2.getId()]; // calcola interazione fra le pietre
+                Pietra pietra1 = g1.getGolem().getPietre().element(); // lancia le due pietre
+                Pietra pietra2 = g2.getGolem().getPietre().element();
+                int danno = Grafo.getMat_ad()[Equilibrio.posizioneNodo(pietra1)][Equilibrio.posizioneNodo(pietra2)]; // calcola interazione fra le pietre
                 if (danno == 0) // pietre dello stesso tipo, non succede nulla
                     return;
                 else if (danno < 0) { // in base al risultato setta la vita del Golem perdente
@@ -46,7 +46,7 @@ public class Battaglia {
                 }
 
                 // stampare stato attuale TamaGolem e giocatori
-
+                //rotazione pietre golem
             }
 
             if (g1.getGolem().isMorto()) { // creazione del nuovo TamaGolem

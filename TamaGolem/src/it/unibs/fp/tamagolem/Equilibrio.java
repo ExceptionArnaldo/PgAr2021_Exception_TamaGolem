@@ -13,6 +13,8 @@ public class Equilibrio {
 
     private static Grafo grafo;
 
+    private static ArrayList<Nodo> nodi = new ArrayList<>();
+
     public static void setup() {
 
         numero_elementi = creaNumeroElemento();
@@ -24,7 +26,6 @@ public class Equilibrio {
     // metodo pre creare il grafo
     public static void setGrafo() {
 
-        ArrayList<Nodo> nodi = new ArrayList<>();
         int random;
         int numero_nodi = 0;
 
@@ -73,5 +74,13 @@ public class Equilibrio {
     // restituisce il numero di elementi
     private static int creaNumeroElemento() {
         return NumeriCasuali.estraiIntero(MIN_ELEMENTI, Elemento.values().length);
+    }
+
+    public static int posizioneNodo(Pietra pietra) {
+        for (int i = 0; i < nodi.size(); i++)
+            if (nodi.get(i).getNome().equals(pietra.getTipo().toString()))
+                return i;
+
+        return -1;
     }
 }

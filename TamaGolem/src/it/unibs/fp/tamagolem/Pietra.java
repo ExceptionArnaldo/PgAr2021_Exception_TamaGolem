@@ -5,6 +5,8 @@ import java.util.Map;
 
 public class Pietra {
 
+    private Elemento tipo;
+
     private static Map<String, Integer> scorta_comune = new HashMap<>();
 
     public static int calcolaPietreTipo() {
@@ -31,5 +33,13 @@ public class Pietra {
         Pietra.scorta_comune.put(chiave, pietre - 1);
         if (pietre - 1 == 0)
             Pietra.scorta_comune.remove(chiave);
+    }
+
+    public Elemento getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(Elemento tipo) {
+        this.tipo = tipo;
     }
 }
