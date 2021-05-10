@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Grafo {
 
     private static ArrayList<Nodo> nodi;
-    private int mat_ad[][];
+    private static int[][] mat_ad;
 
     public Grafo(ArrayList<Nodo> nodi) {
         this.nodi = nodi;
@@ -22,7 +22,7 @@ public class Grafo {
         this.nodi = nodi;
     }
 
-    public int[][] getMat_ad() {
+    public static int[][] getMat_ad() {
         return mat_ad;
     }
 

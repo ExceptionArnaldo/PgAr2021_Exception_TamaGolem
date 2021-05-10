@@ -15,7 +15,7 @@ public enum Elemento {
 
     private int id;
 
-    private Elemento(int id) {
+    Elemento(int id) {
         this.id = id;
     }
 
@@ -23,10 +23,10 @@ public enum Elemento {
         return id;
     }
 
-    public static String elementoPerId(int indice){
+    public static String elementoPerId(int indice) {
 
-        for(Elemento el : values()){
-            if(el.id == indice) return el.name();
+        for (Elemento el : values()) {
+            if (el.id == indice) return el.name();
         }
         return null;
     }
