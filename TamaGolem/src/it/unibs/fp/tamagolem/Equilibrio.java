@@ -76,6 +76,7 @@ public class Equilibrio {
         return NumeriCasuali.estraiIntero(MIN_ELEMENTI, Elemento.values().length);
     }
 
+    // restituisce la posizione del nodo cercato
     public static int posizioneNodo(Pietra pietra) {
         for (int i = 0; i < nodi.size(); i++)
             if (nodi.get(i).getNome().equals(pietra.getTipo().toString()))

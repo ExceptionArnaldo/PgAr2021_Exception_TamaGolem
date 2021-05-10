@@ -28,7 +28,7 @@ public class Pietra {
         Pietra.scorta_comune = scorta_comune;
     }
 
-    public void usa_pietra(String chiave) { // rimuove la pietra che viene utilizzata, se le pietre di un tipo esauriscono si passa ad eliminare quel tipo di pietre
+    public void usaPietra(String chiave) { // rimuove la pietra che viene utilizzata, se le pietre di un tipo esauriscono si passa ad eliminare quel tipo di pietre
         int pietre = Pietra.scorta_comune.get(chiave);
         Pietra.scorta_comune.put(chiave, pietre - 1);
         if (pietre - 1 == 0)

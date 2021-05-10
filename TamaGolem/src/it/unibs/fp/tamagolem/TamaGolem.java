@@ -58,4 +58,9 @@ public class TamaGolem {
     public void setMorto(boolean morto) {
         this.morto = morto;
     }
+
+    public void ruotaPietre(){
+        pietre.add(pietre.element());
+        pietre.remove();
+    }
 }

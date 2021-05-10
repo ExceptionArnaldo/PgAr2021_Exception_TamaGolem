@@ -11,6 +11,14 @@ public class Giocatore {
         return Math.round((float) (n - 1) * (n - 2) / (2 * TamaGolem.getNumero_pietre()));
     }
 
+    public void caricamentoPietre(Pietra pietra) {
+        golem.getPietre().add(pietra);
+    }
+
+    public void creaGolem(String nome){
+        golem.setNome(nome);
+    }
+
     public String getNome() {
         return nome;
     }
@@ -19,7 +27,7 @@ public class Giocatore {
         this.nome = nome;
     }
 
-    public boolean getSconfitto() {
+    public boolean isSconfitto() {
         return sconfitto;
     }
 
