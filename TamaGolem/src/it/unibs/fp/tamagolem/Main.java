@@ -7,7 +7,7 @@ public class Main {
         Equilibrio.setup();
 
         System.out.println("Numero elementi " + Grafo.getNodi().size());
-        System.out.println("Numero Golem " + Giocatore.numeroGolem());
+        System.out.println("Numero Golem " + Giocatore.getNumero_golem());
         System.out.println("Numero pietre Golem " + TamaGolem.getNumero_pietre());
 
         Pietra.riempiScorta();

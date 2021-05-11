@@ -16,9 +16,9 @@ public class Battaglia {
         g2.setNome("gg2");
 
         // evocare i primi Golem: nome + pietre
-        g1.creaGolem("");
+        creaGolem(g1,"");
 
-        g2.creaGolem("");
+        creaGolem(g2,"");
 
     }
 
@@ -26,7 +26,7 @@ public class Battaglia {
 
         while (!g1.isSconfitto() && !g2.isSconfitto()) { // fino a quando i giocatori sono entrambi vivi
 
-            while (g1.getGolem().getVita_attuale() != 0 && g2.getGolem().getVita_attuale() != 0) { // fino a quando i TamaGolem sono entrambi vivi
+            while (g1.getGolem().getVita_attuale() > 0 && g2.getGolem().getVita_attuale() > 0) { // fino a quando i TamaGolem sono entrambi vivi
 
                 Pietra pietra1 = g1.getGolem().getPietre().element(); // lancia le due pietre
                 Pietra pietra2 = g2.getGolem().getPietre().element();
@@ -71,5 +71,20 @@ public class Battaglia {
             // g1 vince
         }
         // stampa l'equilibrio
+    }
+
+    public void creaGolem(Giocatore g, String nome_golem) {
+        g.setGolem_evocati(g.getGolem_evocati() + 1);
+        if (g.getGolem_evocati() > Giocatore.getNumero_golem()) {
+            g.setSconfitto(true);
+            return;
+        }
+        g.getGolem().setNome(nome_golem);
+        g.getGolem().setVita_attuale(g.getGolem().getVita_totale());
+        for (int i = 0; i < g.getGolem().getNumero_pietre(); i++) {
+            //scelta pietra utente
+            //g.caricamentoPietre(pietra);
+            //g.getGolem().getPietre().element().usaPietra(pietra.toString());
+        }
     }
 }

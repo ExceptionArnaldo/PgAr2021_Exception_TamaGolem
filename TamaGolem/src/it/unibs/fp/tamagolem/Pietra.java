@@ -10,7 +10,7 @@ public class Pietra {
     private static Map<String, Integer> scorta_comune = new HashMap<>();
 
     public static int calcolaPietreTipo() {
-        return 2 * TamaGolem.getNumero_pietre() * Giocatore.numeroGolem() / Grafo.getNodi().size();
+        return 2 * TamaGolem.getNumero_pietre() * Giocatore.getNumero_golem() / Grafo.getNodi().size();
     }
 
     public static void riempiScorta() {
