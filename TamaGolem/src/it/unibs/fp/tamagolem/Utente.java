@@ -18,9 +18,7 @@ public class Utente {
 
     public static int sceltaPietra(){
         assegnaVociPietre();
-        int scelta = menu_pietra.scegli();
 
-        return scelta;
+        return menu_pietra.scegli();
     }
-
 }
