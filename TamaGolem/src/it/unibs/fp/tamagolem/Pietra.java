@@ -5,7 +5,12 @@ import java.util.Map;
 
 public class Pietra {
 
+    private Elemento tipo;
     private static Map<String, Integer> scorta_comune = new HashMap<>();
+
+    public Pietra(Elemento tipo) {
+        this.tipo = tipo;
+    }
 
     public static int calcolaPietreTipo() {
         return 2 * TamaGolem.getNumero_pietre() * Giocatore.numeroGolem() / Grafo.getNodi().size();

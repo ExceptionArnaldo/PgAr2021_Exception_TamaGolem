@@ -9,7 +9,7 @@ public class TamaGolem {
     private int vita_totale; // = Equilibrio.vita; //Da implementare con il livello di difficolta'
     private int vita_attuale = vita_totale;
     private boolean morto = false;
-    private Queue<Elemento> pietre = new LinkedList<>();
+    private Queue<Pietra> pietre = new LinkedList<>();
 
     public static int getNumero_pietre() {
         return numero_pietre;
@@ -35,11 +35,11 @@ public class TamaGolem {
         this.vita_totale = vita_totale;
     }
 
-    public Queue<Elemento> getPietre() {
+    public Queue<Pietra> getPietre() {
         return pietre;
     }
 
-    public void setPietre(Queue<Elemento> pietre) {
+    public void setPietre(Queue<Pietra> pietre) {
         this.pietre = pietre;
     }
 
@@ -57,5 +57,12 @@ public class TamaGolem {
 
     public void setMorto(boolean morto) {
         this.morto = morto;
+    }
+
+    public void assegnaPietre(){
+        for(int i = 0; i < numero_pietre; i++){
+            pietre.add(new Pietra(Elemento.getElemento(Utente.sceltaPietra() - 1)));
+            System.out.println(pietre);
+        }
     }
 }

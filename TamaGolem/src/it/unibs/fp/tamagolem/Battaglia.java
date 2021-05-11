@@ -19,7 +19,7 @@ public class Battaglia {
     }
 
     public static void battaglia() {
-
+/*
         while (!g1.getSconfitto() && !g2.getSconfitto()) { // fino a quando i giocatori sono entrambi vivi
 
             while (g1.getGolem().getVita_attuale() != 0 && g2.getGolem().getVita_attuale() != 0) { // fino a quando i TamaGolem sono entrambi vivi
@@ -54,7 +54,7 @@ public class Battaglia {
             } else {
                 // evocazione per g2
             }
-        }
+        }*/
     }
 
     public void fineBattaglia() {

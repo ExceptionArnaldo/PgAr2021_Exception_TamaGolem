@@ -23,6 +23,14 @@ public enum Elemento {
         return id;
     }
 
+    public static Elemento getElemento(int indice) {
+
+        for (Elemento el : values()) {
+            if (el.id == indice) return el;
+        }
+        return null;
+    }
+
     public static String elementoPerId(int indice) {
 
         for (Elemento el : values()) {
