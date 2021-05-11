@@ -66,3 +66,9 @@ public class TamaGolem {
         }
     }
 }
+
+    public void ruotaPietre(){
+        pietre.add(pietre.element());
+        pietre.remove();
+    }
+}
