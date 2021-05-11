@@ -65,7 +65,7 @@ public class TamaGolem {
             System.out.println(pietre);
         }
     }
-}
+
 
     public void ruotaPietre(){
         pietre.add(pietre.element());

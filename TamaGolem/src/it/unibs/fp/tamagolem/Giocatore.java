@@ -32,6 +32,10 @@ public class Giocatore {
         this.sconfitto = sconfitto;
     }
 
+    public boolean getSconfitto(){
+        return this.sconfitto;
+    }
+
     public TamaGolem getGolem() {
         return golem;
     }
@@ -46,5 +50,20 @@ public class Giocatore {
 
     public void setGolem_evocati(int golem_evocati) {
         this.golem_evocati = golem_evocati;
+    }
+
+    public void creaGolem() {
+        setGolem_evocati(getGolem_evocati() + 1);
+        if (getGolem_evocati() > Giocatore.getNumero_golem()) {
+            setSconfitto(true);
+            return;
+        }
+        //getGolem().setNome(nome_golem);
+        getGolem().setVita_attuale(getGolem().getVita_totale());
+        for (int i = 0; i < getGolem().getNumero_pietre(); i++) {
+            //scelta pietra utente
+            //g.caricamentoPietre(pietra);
+            //g.getGolem().getPietre().element().usaPietra(pietra.toString());
+        }
     }
 }
