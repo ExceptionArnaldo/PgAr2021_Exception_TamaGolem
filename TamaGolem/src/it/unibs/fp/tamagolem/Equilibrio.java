@@ -73,7 +73,11 @@ public class Equilibrio {
 
     // restituisce il numero di elementi
     private static int creaNumeroElemento() {
-        return NumeriCasuali.estraiIntero(MIN_ELEMENTI, Elemento.values().length);
+        int difficolta = Utente.sceltaDifficolta();
+
+        if(difficolta == 1) return NumeriCasuali.estraiIntero(MIN_ELEMENTI, 5);
+        else if(difficolta == 2) return NumeriCasuali.estraiIntero(6, 8);
+        else return NumeriCasuali.estraiIntero(9, Elemento.values().length);
     }
 
     // restituisce la posizione del nodo cercato
