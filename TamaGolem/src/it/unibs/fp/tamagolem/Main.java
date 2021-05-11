@@ -17,5 +17,7 @@ public class Main {
 
         TamaGolem g = new TamaGolem();
         g.assegnaPietre();
+
+        System.out.println("Pietre scorta comune" + Pietra.getScorta_comune());
     }
 }

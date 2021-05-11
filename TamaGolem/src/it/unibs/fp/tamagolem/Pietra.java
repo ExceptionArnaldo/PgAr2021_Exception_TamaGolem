@@ -45,4 +45,5 @@ public class Pietra {
     public void setTipo(Elemento tipo) {
         this.tipo = tipo;
     }
+
 }

@@ -23,10 +23,10 @@ public enum Elemento {
         return id;
     }
 
-    public static Elemento getElemento(int indice) {
+    public static Elemento getElemento(String tipo) {
 
         for (Elemento el : values()) {
-            if (el.id == indice) return el;
+            if (el.name().equals(tipo)) return el;
         }
         return null;
     }

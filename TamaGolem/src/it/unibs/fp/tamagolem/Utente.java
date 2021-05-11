@@ -16,9 +16,10 @@ public class Utente {
         menu_pietra = new MyMenu("Assegna Pietre", voci_pietre);
     }
 
-    public static int sceltaPietra(){
+    public static String sceltaPietra(){
         assegnaVociPietre();
+        int scelta = menu_pietra.scegli();
 
-        return menu_pietra.scegli();
+        return voci_pietre[scelta-1];
     }
 }

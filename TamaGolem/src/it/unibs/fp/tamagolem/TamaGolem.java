@@ -59,13 +59,14 @@ public class TamaGolem {
         this.morto = morto;
     }
 
-    public void assegnaPietre(){
+    public void assegnaPietre(){ // assegna le pietre ad un golem FUNZIONA!!!!!!!!!!!!!
         for(int i = 0; i < numero_pietre; i++){
-            pietre.add(new Pietra(Elemento.getElemento(Utente.sceltaPietra() - 1)));
-            System.out.println(pietre);
+            Pietra pietra_attuale = new Pietra(Elemento.getElemento(Utente.sceltaPietra()));
+
+            pietre.add(pietra_attuale);
+            pietra_attuale.usaPietra(pietra_attuale.getTipo().toString());
         }
     }
-
 
     public void ruotaPietre(){
         pietre.add(pietre.element());
