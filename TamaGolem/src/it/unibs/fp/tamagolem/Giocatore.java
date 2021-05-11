@@ -60,7 +60,7 @@ public class Giocatore {
         }
         //getGolem().setNome(nome_golem);
         getGolem().setVita_attuale(getGolem().getVita_totale());
-        for (int i = 0; i < getGolem().getNumero_pietre(); i++) {
+        for (int i = 0; i < TamaGolem.getNumero_pietre(); i++) {
             //scelta pietra utente
             //g.caricamentoPietre(pietra);
             //g.getGolem().getPietre().element().usaPietra(pietra.toString());
