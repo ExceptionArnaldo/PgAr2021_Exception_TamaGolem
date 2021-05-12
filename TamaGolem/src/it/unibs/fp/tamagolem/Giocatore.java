@@ -59,12 +59,9 @@ public class Giocatore {
         }
         else{
             golem = new TamaGolem();
-            Utente.nomeGolem();
+            golem.setNome(Utente.nomeGolem());
             golem.setVita_attuale(getGolem().getVita_totale());
-            for (int i = 0; i < TamaGolem.getNumero_pietre(); i++) {
-                golem.assegnaPietre();
-            }
+            golem.assegnaPietre();
         }
-
     }
 }

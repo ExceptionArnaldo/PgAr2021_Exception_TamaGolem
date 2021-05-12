@@ -9,7 +9,7 @@ public class Utente {
     private static MyMenu menu_pietra;
 
     private final static String[] voci_difficolta = {"Facile", "Medio", "Difficile"};
-    private final static MyMenu menu_difficolta = new MyMenu ("Scelta diffocltà", voci_difficolta);
+    private final static MyMenu menu_difficolta = new MyMenu ("Scelta difficoltà", voci_difficolta);
 
     private static void assegnaVociPietre(){
 
@@ -33,6 +33,6 @@ public class Utente {
     }
 
     public static String nomeGolem(){
-        return InputDati.leggiStringaNonVuota("Inserisci un nome");
+        return InputDati.leggiStringaNonVuota("Inserisci un nome: ");
     }
 }
