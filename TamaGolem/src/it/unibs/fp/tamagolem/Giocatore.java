@@ -4,15 +4,15 @@ public class Giocatore {
 
     private String nome;
     private boolean sconfitto = false;
-    private static int numero_golem = Math.round((float) (Grafo.getNodi().size() - 1) * (Grafo.getNodi().size() - 2) / (2 * TamaGolem.getNumero_pietre()));
-    private int golem_evocati = 0;
+    private static int numero_golem = Math.round((float) (Grafo.getNodi().size() - Costante.C1) * (Grafo.getNodi().size() - Costante.C2) / (Costante.C2 * TamaGolem.getNumero_pietre()));
+    private int golem_evocati = Costante.C0;
     private TamaGolem golem;
 
     public static int getNumero_golem() {
         return numero_golem;
     }
 
-    public void caricamentoPietre(Pietra pietra) {
+    public void caricamentoPietre(Pietra pietra) { // Aggiunge la pietra scelta al golem
         golem.getPietre().add(pietra);
     }
 
@@ -32,7 +32,7 @@ public class Giocatore {
         this.sconfitto = sconfitto;
     }
 
-    public boolean getSconfitto(){
+    public boolean getSconfitto() {
         return this.sconfitto;
     }
 
@@ -52,12 +52,11 @@ public class Giocatore {
         this.golem_evocati = golem_evocati;
     }
 
-    public void evocaGolem() {
-        setGolem_evocati(getGolem_evocati() + 1);
+    public void evocaGolem() { // se sono ancora disponibili evocazioni si crea il golem, in caso contrario il giocatore viene sconfitto
+        setGolem_evocati(getGolem_evocati() + Costante.C1);
         if (getGolem_evocati() > Giocatore.getNumero_golem()) {
             setSconfitto(true);
-        }
-        else{
+        } else {
             golem = new TamaGolem();
             golem.setNome(Utente.nomeGolem());
             golem.setVita_attuale(getGolem().getVita_totale());

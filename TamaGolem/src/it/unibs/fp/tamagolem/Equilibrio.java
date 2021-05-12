@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class Equilibrio {
 
-    private final static int MIN_ELEMENTI = 3;
+    private final static int MIN_ELEMENTI = Costante.C3;
 
     private static int numero_elementi;
 
@@ -15,7 +15,7 @@ public class Equilibrio {
 
     private static ArrayList<Nodo> nodi = new ArrayList<>();
 
-    public static void setup() {
+    public static void setup() { // inizializzazione dell' equilibrio di gioco
 
         numero_elementi = creaNumeroElemento();
         setGrafo();
@@ -27,7 +27,7 @@ public class Equilibrio {
     public static void setGrafo() {
 
         int random;
-        int numero_nodi = 0;
+        int numero_nodi = Costante.C0;
 
         do { // aggiunge i nodi
             random = (int) (Math.random() * numero_elementi);
@@ -71,13 +71,14 @@ public class Equilibrio {
         }
     }
 
-    // restituisce il numero di elementi
+    // restituisce il numero di elementi in base alla difficolta'
     private static int creaNumeroElemento() {
         int difficolta = Utente.sceltaDifficolta();
 
-        if(difficolta == 1) return NumeriCasuali.estraiIntero(MIN_ELEMENTI, 5);
-        else if(difficolta == 2) return NumeriCasuali.estraiIntero(6, 8);
-        else return NumeriCasuali.estraiIntero(9, Elemento.values().length);
+        if (difficolta == Costante.C1) return NumeriCasuali.estraiIntero(MIN_ELEMENTI, Costante.MAX_FACILE);
+        else if (difficolta == Costante.C2)
+            return NumeriCasuali.estraiIntero(Costante.MAX_FACILE + Costante.C1, Costante.MAX_MEDIO);
+        else return NumeriCasuali.estraiIntero(Costante.MAX_MEDIO + Costante.C1, Elemento.values().length);
     }
 
     // restituisce la posizione del nodo cercato
@@ -86,6 +87,6 @@ public class Equilibrio {
             if (nodi.get(i).getNome().equals(pietra.getTipo().toString()))
                 return i;
 
-        return -1;
+        return -Costante.C1;
     }
 }

@@ -26,7 +26,7 @@ public class Battaglia {
 
         while (!g1.getSconfitto() && !g2.getSconfitto()) { // fino a quando i giocatori sono entrambi vivi
 
-            while (g1.getGolem().getVita_attuale() > 0 && g2.getGolem().getVita_attuale() > 0) { // fino a quando i TamaGolem sono entrambi vivi
+            while (g1.getGolem().getVita_attuale() > Costante.C0 && g2.getGolem().getVita_attuale() > Costante.C0) { // fino a quando i TamaGolem sono entrambi vivi
 
                 if (danno())
                     verificaMorte();
@@ -48,9 +48,9 @@ public class Battaglia {
         Pietra pietra1 = g1.getGolem().getPietre().element(); // lancia le due pietre
         Pietra pietra2 = g2.getGolem().getPietre().element();
         int danno = Grafo.getMat_ad()[Equilibrio.posizioneNodo(pietra1)][Equilibrio.posizioneNodo(pietra2)]; // calcola interazione fra le pietre
-        if (danno == 0) { // pietre dello stesso tipo, non succede nulla
+        if (danno == Costante.C0) { // pietre dello stesso tipo, non succede nulla
             return false;
-        } else if (danno < 0) { // in base al risultato setta la vita del Golem perdente
+        } else if (danno < Costante.C0) { // in base al risultato setta la vita del Golem perdente
             g1.getGolem().setVita_attuale(g1.getGolem().getVita_attuale() + danno);
         } else {
             g2.getGolem().setVita_attuale(g2.getGolem().getVita_attuale() - danno);
@@ -60,9 +60,9 @@ public class Battaglia {
 
     private static void verificaMorte() {
 
-        if (g1.getGolem().getVita_attuale() > 0 && g2.getGolem().getVita_attuale() > 0) { // se non e' morto nessun golem si stampa il danno
+        if (g1.getGolem().getVita_attuale() > Costante.C0 && g2.getGolem().getVita_attuale() > Costante.C0) { // se non e' morto nessun golem si stampa il danno
             // stampa danno
-        } else if (g1.getGolem().getVita_attuale() <= 0) { // altrimenti stampa chi e' morto
+        } else if (g1.getGolem().getVita_attuale() <= Costante.C0) { // altrimenti stampa chi e' morto
             // golem 1 morto
             g1.getGolem().setMorto(true);
         } else {

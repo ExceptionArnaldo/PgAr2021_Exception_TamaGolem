@@ -12,14 +12,13 @@ public class Pietra {
         this.tipo = tipo;
     }
 
-    public static int calcolaPietreTipo() {
-        return 2 * TamaGolem.getNumero_pietre() * Giocatore.getNumero_golem() / Grafo.getNodi().size();
+    public static int calcolaPietreTipo() { // restituisce il numero di pietre per tipo
+        return Costante.C2 * TamaGolem.getNumero_pietre() * Giocatore.getNumero_golem() / Grafo.getNodi().size();
     }
 
-    public static void riempiScorta() {
-        int totale = calcolaPietreTipo();
+    public static void riempiScorta() { // Crea la scorta comune di pietre
         for (int i = 0; i < Grafo.getNodi().size(); i++) {
-            scorta_comune.put(Grafo.getNodi().get(i).getNome(), totale);
+            scorta_comune.put(Grafo.getNodi().get(i).getNome(), calcolaPietreTipo());
         }
     }
 
@@ -33,8 +32,8 @@ public class Pietra {
 
     public void usaPietra(String chiave) { // rimuove la pietra che viene utilizzata, se le pietre di un tipo esauriscono si passa ad eliminare quel tipo di pietre
         int pietre = Pietra.scorta_comune.get(chiave);
-        Pietra.scorta_comune.put(chiave, pietre - 1);
-        if (pietre - 1 == 0)
+        Pietra.scorta_comune.put(chiave, pietre - Costante.C1);
+        if (pietre - Costante.C1 == Costante.C0)
             Pietra.scorta_comune.remove(chiave);
     }
 
