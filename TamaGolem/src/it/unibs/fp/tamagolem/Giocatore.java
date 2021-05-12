@@ -1,5 +1,7 @@
 package it.unibs.fp.tamagolem;
 
+import it.unibs.fp.mylib.InputDati;
+
 public class Giocatore {
 
     private String nome;
@@ -58,7 +60,7 @@ public class Giocatore {
             setSconfitto(true);
         } else {
             golem = new TamaGolem();
-            golem.setNome(Utente.nomeGolem());
+            golem.setNome(InputDati.leggiStringaNonVuota(Costante.MSG_NOME_GOLEM));
             golem.setVita_attuale(getGolem().getVita_totale());
             golem.assegnaPietre();
         }

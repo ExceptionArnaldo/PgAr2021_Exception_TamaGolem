@@ -1,25 +1,24 @@
 package it.unibs.fp.tamagolem;
 
+import it.unibs.fp.mylib.BelleStringhe;
+
 public class Battaglia {
 
     private static Giocatore g1 = new Giocatore();
     private static Giocatore g2 = new Giocatore();
 
     public void setBattaglia() {
-        // stampa intro alla battaglia
+        Utente.stampa(Costante.MSG_BENVENUTI);
+        Utente.stampa(BelleStringhe.stampaStringaCorniceCentrato(Costante.MSG_INTRO));
 
-        // genera un nuovo equilibrio
+        Utente.stampa(Costante.MSG_EQUILIBRIO);
+        Equilibrio.setup(); // genera un nuovo equilibrio
 
-        // impostare i valori generali
+        Utente.nomeAlievo(g1, Costante.GIOCATORE1); // Nomi giocatori
+        Utente.nomeAlievo(g2, Costante.GIOCATORE2);
 
-        g1.setNome("gg1");
-        g2.setNome("gg2");
-
-        // evocare i primi Golem: nome + pietre
-        //creaGolem(g1, "");
-
-        //creaGolem(g2, "");
-
+        g1.evocaGolem(); // evocare i primi Golem: nome + pietre
+        g2.evocaGolem();
     }
 
     public static void battaglia() {
@@ -81,5 +80,4 @@ public class Battaglia {
         }
         // stampa l'equilibrio
     }
-
 }
