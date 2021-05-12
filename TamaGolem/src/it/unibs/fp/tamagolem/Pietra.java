@@ -13,7 +13,7 @@ public class Pietra {
     }
 
     public static int calcolaPietreTipo() { // restituisce il numero di pietre per tipo
-        return Costante.C2 * TamaGolem.getNumero_pietre() * Giocatore.getNumero_golem() / Grafo.getNodi().size();
+        return (int)Math.ceil(Costante.C2 * TamaGolem.getNumero_pietre() * Giocatore.getNumero_golem() / (float)Grafo.getNodi().size());
     }
 
     public static void riempiScorta() { // Crea la scorta comune di pietre

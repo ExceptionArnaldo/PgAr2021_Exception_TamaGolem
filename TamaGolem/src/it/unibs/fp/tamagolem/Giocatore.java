@@ -39,11 +39,11 @@ public class Giocatore {
     public TamaGolem getGolem() {
         return golem;
     }
-
+/*
     public void setGolem(TamaGolem golem) {
         this.golem = golem;
     }
-
+*/
     public int getGolem_evocati() {
         return golem_evocati;
     }

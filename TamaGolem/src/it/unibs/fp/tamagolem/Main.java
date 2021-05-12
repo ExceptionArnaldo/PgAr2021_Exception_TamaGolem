@@ -15,9 +15,12 @@ public class Main {
         System.out.println("TEST");
         Pietra.getScorta_comune().forEach((key, value) -> System.out.println(key + " " + value));
 
-        Giocatore g = new Giocatore();
-        g.evocaGolem();
+        /*Giocatore g = new Giocatore();
+        g.evocaGolem();*/
 
         System.out.println("Pietre scorta comune" + Pietra.getScorta_comune());
+
+        MenuG.menuPrincipale();
+
     }
 }
