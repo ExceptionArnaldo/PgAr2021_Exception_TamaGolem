@@ -1,12 +1,13 @@
 package it.unibs.fp.tamagolem;
 
-import it.unibs.fp.mylib.BelleStringhe;
-
 public class Main {
 
     public static void main(String[] args) {
 
-        Equilibrio.setup();
+        Battaglia.setBattaglia();
+
+
+        /*Equilibrio.setup();
 
         System.out.println("Numero elementi " + Grafo.getNodi().size());
         System.out.println("Numero Golem " + Giocatore.getNumero_golem());
@@ -17,9 +18,12 @@ public class Main {
         System.out.println("TEST");
         Pietra.getScorta_comune().forEach((key, value) -> System.out.println(key + " " + value));
 
+        Utente.stampaEquilibrio();
+
         Giocatore g = new Giocatore();
         g.evocaGolem();
 
         System.out.println("Pietre scorta comune" + Pietra.getScorta_comune());
+         */
     }
 }

@@ -4,7 +4,7 @@ import java.util.*;
 
 public class TamaGolem {
 
-    private static int numero_pietre = (Grafo.getNodi().size() + Costante.C1) / Costante.C3 + Costante.C1;
+    private static int numero_pietre = (int) Math.ceil((float) (Grafo.getNodi().size() + Costante.C1) / Costante.C3 + Costante.C1);
     private String nome;
     private int vita_totale = Costante.VITA_TAMAGOLEM;
     private int vita_attuale = vita_totale;
@@ -60,11 +60,11 @@ public class TamaGolem {
     }
 
     public void assegnaPietre() { // assegna le pietre ad un golem FUNZIONA!!!!!!!!!!!!!
-        for (int i = 0; i < numero_pietre; i++) {
+        for (int i = Costante.C0; i < numero_pietre; i++) {
             Pietra pietra_attuale = new Pietra(Elemento.getElemento(Utente.sceltaPietra()));
 
             pietre.add(pietra_attuale);
-            pietra_attuale.usaPietra(pietra_attuale.getTipo().toString());
+            pietra_attuale.usaPietra(pietra_attuale.getTipo().toString()); // getTipo non funziona, restituisce NULL !!!!
         }
     }
 

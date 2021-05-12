@@ -20,7 +20,7 @@ public class Equilibrio {
         numero_elementi = creaNumeroElemento();
         setGrafo();
         setEquilibrio();
-        stampaMatrice();
+        Pietra.riempiScorta();
     }
 
     // metodo pre creare il grafo
@@ -41,33 +41,16 @@ public class Equilibrio {
 
         } while (numero_nodi != numero_elementi); // fa finchè il numero di nodi non raggiunge a numero di elementi
 
-        for (Nodo elementi : nodi) {
-            System.out.println(elementi.getNome());
-        }
-
         grafo = new Grafo(nodi); // crea il grafo con i nodi
 
     }
 
     // set l'equilibrio degli elementi
     public static void setEquilibrio() {
-        for (int i = 0; i < grafo.getNodi().size(); i++) {
+        for (int i = Costante.C0; i < grafo.getNodi().size(); i++) {
             for (int j = i; j < grafo.getNodi().size(); j++) {
                 grafo.setPeso(grafo.getNodi().get(i), grafo.getNodi().get(j));
             }
-        }
-    }
-
-    // stampa la matrice delle adiacenze
-    public static void stampaMatrice() {
-
-        int[][] mat_equi = grafo.getMat_ad();
-        System.out.println();
-        for (int i = 0; i < mat_equi.length; i++) {
-            for (int j = 0; j < mat_equi.length; j++) {
-                System.out.printf("%3d ", mat_equi[i][j]);
-            }
-            System.out.println(" ");
         }
     }
 
@@ -83,10 +66,14 @@ public class Equilibrio {
 
     // restituisce la posizione del nodo cercato
     public static int posizioneNodo(Pietra pietra) {
-        for (int i = 0; i < nodi.size(); i++)
+        for (int i = Costante.C0; i < nodi.size(); i++)
             if (nodi.get(i).getNome().equals(pietra.getTipo().toString()))
                 return i;
 
         return -Costante.C1;
+    }
+
+    public static ArrayList<Nodo> getNodi() {
+        return nodi;
     }
 }

@@ -10,20 +10,20 @@ public class Nodo {
         this.nome = nome;
     }
 
+    // metodo che controlla l'esistenza di un nodo
+    public boolean esisteNodo(ArrayList<Nodo> nodi) {
+
+        for (Nodo nodo : nodi) {
+            if (nodo.getNome().equals(this.nome)) return true;
+        }
+        return false;
+    }
+
     public String getNome() {
         return nome;
     }
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    // metodo che controlla l'esistenza di un nodo
-    public boolean esisteNodo(ArrayList<Nodo> nodi) {
-
-        for (int i = 0; i < nodi.size(); i++) {
-            if (nodi.get(i).getNome().equals(this.nome)) return true;
-        }
-        return false;
     }
 }

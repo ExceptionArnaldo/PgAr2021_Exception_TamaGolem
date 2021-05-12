@@ -6,7 +6,7 @@ public class Giocatore {
 
     private String nome;
     private boolean sconfitto = false;
-    private static int numero_golem = Math.round((float) (Grafo.getNodi().size() - Costante.C1) * (Grafo.getNodi().size() - Costante.C2) / (Costante.C2 * TamaGolem.getNumero_pietre()));
+    private static int numero_golem = (int) Math.ceil((float) (Grafo.getNodi().size() - Costante.C1) * (Grafo.getNodi().size() - Costante.C2) / (Costante.C2 * TamaGolem.getNumero_pietre()));
     private int golem_evocati = Costante.C0;
     private TamaGolem golem;
 
@@ -60,9 +60,10 @@ public class Giocatore {
             setSconfitto(true);
         } else {
             golem = new TamaGolem();
-            golem.setNome(InputDati.leggiStringaNonVuota(Costante.MSG_NOME_GOLEM));
+            golem.setNome(InputDati.leggiStringaNonVuota(getNome() + Costante.MSG_NOME_GOLEM));
             golem.setVita_attuale(getGolem().getVita_totale());
             golem.assegnaPietre();
+            Utente.stampa(Costante.MSG_GOLEM_CREATO, golem.getNome());
         }
     }
 }
