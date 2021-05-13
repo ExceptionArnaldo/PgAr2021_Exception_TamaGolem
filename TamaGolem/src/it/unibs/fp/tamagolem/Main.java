@@ -22,7 +22,7 @@ public class Main {
         /*Giocatore g = new Giocatore();
         g.evocaGolem();*/
 
-        System.out.println("Pietre scorta comune" + Pietra.getScorta_comune());
+        /*System.out.println("Pietre scorta comune" + Pietra.getScorta_comune());
 
         MenuG.menuPrincipale();
         Utente.stampaEquilibrio();
@@ -31,5 +31,6 @@ public class Main {
         g.evocaGolem();
 
         System.out.println("Pietre scorta comune" + Pietra.getScorta_comune());
+         */
     }
 }

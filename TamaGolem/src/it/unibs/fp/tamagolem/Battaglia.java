@@ -103,7 +103,7 @@ public class Battaglia {
 
     private static void infliggiDanno(Giocatore vincente, Giocatore perdente, int danno) { // decrementa la vita del golem perdente
         count = Costante.C0;
-        Utente.stampa(BelleStringhe.incorniciaCentrato(String.format(Costante.MSG_PIETRA_SUPEREFFICACE, vincente.getGolem().getPietre().element().getTipo().toString(), perdente.getGolem().getPietre().element().getTipo().toString()), Costante.MSG_PIETRA_SUPEREFFICACE.length()));
+        Utente.stampa(BelleStringhe.incornicia(String.format(Costante.MSG_PIETRA_SUPEREFFICACE, vincente.getGolem().getPietre().element().getTipo().toString(), perdente.getGolem().getPietre().element().getTipo().toString())));
         perdente.getGolem().setVita_attuale(perdente.getGolem().getVita_attuale() - Math.abs(danno));
     }
 
