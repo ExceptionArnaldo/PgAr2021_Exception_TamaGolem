@@ -14,11 +14,16 @@ public class MenuG {
         frame.setSize(400, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
-
         JPanel panel = new JPanel();
+
+        JLabel benvenuto = new JLabel("Benvenuti in TAMAGOLEM! ");
+
+        benvenuto.setHorizontalAlignment(JLabel.CENTER);
 
         JButton inizia = new JButton("Inizio partita");
         JButton regola = new JButton("Regole");
+
+        panel.setLayout(new GridLayout(5, 1, 20, 5));
 
         inizia.addActionListener(new ActionListener() {
             @Override
@@ -27,11 +32,12 @@ public class MenuG {
                 menuDifficolta();
             }
         });
-
+        panel.add(benvenuto);
         panel.add(inizia);
         panel.add(regola);
 
         frame.add(panel);
+
         frame.setVisible(true);
 
     }
@@ -47,6 +53,8 @@ public class MenuG {
         JButton button_facile = new JButton("Facile");
         JButton button_medio = new JButton("Medio");
         JButton button_difficile = new JButton("Difficile");
+
+        button_facile.setSize(new Dimension(100, 20));
 
         JLabel titolo = new JLabel("Scegliere la difficoltà");
         titolo.setHorizontalAlignment(JLabel.CENTER);
@@ -64,7 +72,7 @@ public class MenuG {
         button_facile.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                sceltaNomiGiocatori(Grafo.getNodi().size());
+                sceltaNomiGiocatori(TamaGolem.getNumero_pietre());
                 frame.dispose();
             }
         });
@@ -78,8 +86,13 @@ public class MenuG {
 
         JPanel panel = new JPanel();
 
-        JLabel giocatore1 = new JLabel("Giocatore 1 : ");
-        JLabel giocatore2 = new JLabel("Giocatore 2 : ");
+        JLabel giocatore1 = new JLabel("Nome del giocatore 1 : ");
+        JLabel giocatore2 = new JLabel("Nome del giocatore 2 : ");
+
+        giocatore1.setHorizontalAlignment(JLabel.CENTER);
+        giocatore1.setForeground(Color.red);
+        giocatore2.setHorizontalAlignment(JLabel.CENTER);
+        giocatore2.setForeground(Color.blue);
 
         JTextField nomeG1 = new JTextField(15);
         JTextField nomeG2 = new JTextField(15);
@@ -94,13 +107,13 @@ public class MenuG {
             }
         });
 
-        panel.setLayout(new GridLayout(3, 2));
+        panel.setLayout(new GridLayout(6, 1, 10 ,10));
 
         panel.add(giocatore1);
         panel.add(nomeG1);
         panel.add(giocatore2);
         panel.add(nomeG2);
-        panel.add(button_avanti);
+        panel.add(button_avanti, 4);
 
         frame.add(panel);
 

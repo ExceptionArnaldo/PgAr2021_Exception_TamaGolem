@@ -2,6 +2,8 @@ package it.unibs.fp.tamagolem;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class EvocaGolemG {
 
@@ -13,12 +15,20 @@ public class EvocaGolemG {
         frame.setLocationRelativeTo(null);
 
         JPanel panel = new JPanel();
-
+        panel.setLayout(new GridLayout(9, 2, 10, 10));
         JLabel label_nome = new JLabel("Nome del golem : ");
+        label_nome.setHorizontalAlignment(JLabel.CENTER);
 
         JTextField field_nome = new JTextField(15);
 
         JButton button_conferma = new JButton("Conferma");
+        button_conferma.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ScontroGUI.scontro(new String[] {"1", "2"});
+                frame.dispose();
+            }
+        });
 
         JComboBox [] scelta_elementi = new JComboBox[numero_elementi];
 
