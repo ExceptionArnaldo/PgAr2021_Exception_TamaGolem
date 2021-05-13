@@ -1,6 +1,7 @@
-package it.unibs.fp.tamagolem;
+package it.unibs.fp.tamagolem.grafo;
 
 import it.unibs.fp.mylib.NumeriCasuali;
+import it.unibs.fp.tamagolem.utility.Costante;
 
 import java.util.ArrayList;
 

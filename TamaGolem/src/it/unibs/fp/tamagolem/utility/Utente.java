@@ -1,9 +1,13 @@
-package it.unibs.fp.tamagolem;
+package it.unibs.fp.tamagolem.utility;
 
 import it.unibs.fp.mylib.BelleStringhe;
 import it.unibs.fp.mylib.EstrazioniCasuali;
 import it.unibs.fp.mylib.InputDati;
 import it.unibs.fp.mylib.MyMenu;
+import it.unibs.fp.tamagolem.Equilibrio;
+import it.unibs.fp.tamagolem.Giocatore;
+import it.unibs.fp.tamagolem.Pietra;
+import it.unibs.fp.tamagolem.grafo.Grafo;
 
 public class Utente {
 

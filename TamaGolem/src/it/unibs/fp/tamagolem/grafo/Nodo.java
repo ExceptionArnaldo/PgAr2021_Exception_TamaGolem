@@ -1,4 +1,4 @@
-package it.unibs.fp.tamagolem;
+package it.unibs.fp.tamagolem.grafo;
 
 import java.util.ArrayList;
 

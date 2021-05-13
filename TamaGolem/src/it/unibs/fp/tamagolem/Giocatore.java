@@ -2,6 +2,9 @@ package it.unibs.fp.tamagolem;
 
 import it.unibs.fp.mylib.BelleStringhe;
 import it.unibs.fp.mylib.InputDati;
+import it.unibs.fp.tamagolem.grafo.Grafo;
+import it.unibs.fp.tamagolem.utility.Costante;
+import it.unibs.fp.tamagolem.utility.Utente;
 
 public class Giocatore {
 

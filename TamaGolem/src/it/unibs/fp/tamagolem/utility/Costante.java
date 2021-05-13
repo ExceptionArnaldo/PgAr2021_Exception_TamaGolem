@@ -1,4 +1,4 @@
-package it.unibs.fp.tamagolem;
+package it.unibs.fp.tamagolem.utility;
 
 public class Costante {
 
