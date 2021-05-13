@@ -10,7 +10,7 @@ public class Grafo {
     private static int[][] mat_ad;
 
     public Grafo(ArrayList<Nodo> nodi) {
-        this.nodi = nodi;
+        Grafo.nodi = nodi;
         mat_ad = new int[nodi.size()][nodi.size()];
     }
 
@@ -18,16 +18,8 @@ public class Grafo {
         return nodi;
     }
 
-    public void setNodi(ArrayList<Nodo> nodi) {
-        this.nodi = nodi;
-    }
-
     public static int[][] getMat_ad() {
         return mat_ad;
-    }
-
-    public void setMat_ad(int[][] mat_ad) {
-        this.mat_ad = mat_ad;
     }
 
     // metodo che setta i danni

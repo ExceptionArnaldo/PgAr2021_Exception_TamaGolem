@@ -120,7 +120,7 @@ public class BelleStringhe {
         StringBuilder fine = new StringBuilder(BelleStringhe.stampaCornice(lunghezzaMassima, segnoCornice));
         fine.append(ACAPO);
         fine.append(titoloCentrato);
-        fine.append(ACAPO);
+        //fine.append(ACAPO);
         fine.append(BelleStringhe.stampaCornice(lunghezzaMassima, segnoCornice));
         fine.append(ACAPO);
         return fine.toString();

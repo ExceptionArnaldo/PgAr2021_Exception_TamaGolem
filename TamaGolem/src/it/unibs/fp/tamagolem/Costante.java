@@ -46,7 +46,17 @@ public class Costante {
     public static final String MSG_RIVINDITA = "%s sei un alievo abbastanza scarso, ma puoi rifarti in una NUOVA INCREDIBILE BATTAGLIA ! ! !";
     public static final String RIVINDITA = "Volete giocare ancora?";
     public static final String MSG_SALUTO_FINALE = "Arrivederci allievi, alla prossima!";
+    public static final String MSG_PREPARE_GOLEM = "Prepare il tuo TamaGolem alla battaglia, fagli ingurgitare %d pietre";
+    public static final String FRECCIA = " --> ";
+    public static final String MSG_STAMPA_EQUILIBRIO = "%s --> %d --> %s\n";
 
+    public static final String[] GOLEM = {"(҂◡̀_◡́)ᕤ", "(ง︡'-'︠)ง", "ᕙ( ︡'︡益'︠)ง", "ヽ༼ ・ ل͜ ・ ༽ﾉ", "(╥︣﹏᷅╥)", "(⊙.⊙(◉̃_᷅◉)⊙.⊙)",};
 
-    public static final String[] GOLEM = {"(҂◡̀_◡́)ᕤ", "(ง︡'-'︠)ง", "ᕙ( ︡'︡益'︠)ง", "ヽ༼ ・ ل͜ ・ ༽ﾉ"};
+    // Messaggi per continuare
+    public static final String MSG_PREMI_PER_CONTINUARE = "Premi qualsiasi taso per continuare";
+    public static final String NON_PROPRIO_QUALSIASI = "Non proprio qualsiasi... ";
+    public static final String MSG_GIA_LO_SAI = "Sai gia' quale non puoi premere ";
+    public static final String MSG_NASCONDI_AVVERSARIO = "Nascondi le tue scelte all' avversario";
+    public static final String MSG_BRUTTA_FINE = "OPS, qualcuno ha fatto una brutta fine";
+    public static final String MSG_GIA_LO_SAI_PT2 = "Gia lo sai --> ";
 }

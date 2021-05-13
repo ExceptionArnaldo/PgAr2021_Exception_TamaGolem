@@ -33,15 +33,7 @@ public class Pietra {
         return tipo;
     }
 
-    public void setTipo(Elemento tipo) {
-        this.tipo = tipo;
-    }
-
     public static Map<String, Integer> getScorta_comune() {
         return scorta_comune;
-    }
-
-    public void setScorta_comune(Map<String, Integer> scorta_comune) {
-        Pietra.scorta_comune = scorta_comune;
     }
 }

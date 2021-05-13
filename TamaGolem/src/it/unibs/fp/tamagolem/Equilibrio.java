@@ -42,7 +42,6 @@ public class Equilibrio {
         } while (numero_nodi != numero_elementi); // fa finchè il numero di nodi non raggiunge a numero di elementi
 
         grafo = new Grafo(nodi); // crea il grafo con i nodi
-
     }
 
     // set l'equilibrio degli elementi
@@ -54,7 +53,7 @@ public class Equilibrio {
         }
     }
 
-    // restituisce il numero di elementi in base alla difficolta'
+    // restituisce il numero di nodi in base alla difficolta'
     private static int creaNumeroElemento() {
         int difficolta = Utente.sceltaDifficolta();
 
