@@ -28,6 +28,7 @@ public class Equilibrio {
 
         int random;
         int numero_nodi = Costante.C0;
+        nodi.clear();
 
         do { // aggiunge i nodi
             random = (int) (Math.random() * numero_elementi);

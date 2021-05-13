@@ -96,8 +96,8 @@ public class ScontroGUI {
         vita2.setStringPainted(true);
         vita2.setForeground(Color.GREEN);
 
-        /*String path = "C:\\Users\\User\\Desktop\\sfondo.jpg";
-        Image img = Toolkit.getDefaultToolkit().createImage(path);*/
+        String path = "C:\\Users\\User\\Desktop\\sfondo.jpg";
+        Image img = Toolkit.getDefaultToolkit().createImage(path);
         panel.setBackground(Color.GRAY);
     }
 

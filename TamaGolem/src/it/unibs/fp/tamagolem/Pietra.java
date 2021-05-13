@@ -13,6 +13,7 @@ public class Pietra {
     }
 
     public static void riempiScorta() { // Crea la scorta comune di pietre
+        scorta_comune.clear();
         for (int i = Costante.C0; i < Grafo.getNodi().size(); i++) {
             scorta_comune.put(Grafo.getNodi().get(i).getNome(), Costante.NUMERO_PIETRE_PER_TIPO);
         }

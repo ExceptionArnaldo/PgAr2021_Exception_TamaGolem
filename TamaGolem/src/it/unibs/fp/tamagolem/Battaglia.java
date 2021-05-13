@@ -21,7 +21,7 @@ public class Battaglia {
         Utente.stampa(BelleStringhe.stampaStringaCorniceCentrato(Costante.MSG_EQUILIBRIO));
         MyTime.wait(Costante.C2); // in ogni videogioco che si rispetti serve un po' di tempo di caricamento
 
-        MenuG.menuPrincipale();
+        //MenuG.menuPrincipale();
 
         g1 = new Giocatore();
         g2 = new Giocatore();
@@ -107,8 +107,6 @@ public class Battaglia {
         count = Costante.C0;
         Utente.stampa(BelleStringhe.incornicia(String.format(Costante.MSG_PIETRA_SUPEREFFICACE, vincente.getGolem().getPietre().element().getTipo().toString(), perdente.getGolem().getPietre().element().getTipo().toString())));
         perdente.getGolem().setVita_attuale(perdente.getGolem().getVita_attuale() - Math.abs(danno));
-        ScontroGUI.setVita1(danno);
-        ScontroGUI.setVita2(danno);
     }
 
     private static void ruotaPietraNonMorto(Giocatore vincente, Giocatore perdente) { // ruota le pietre del golem vivo e setta il goelm morto come morto
