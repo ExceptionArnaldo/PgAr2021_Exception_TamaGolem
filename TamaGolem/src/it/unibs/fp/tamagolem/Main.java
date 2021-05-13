@@ -6,7 +6,6 @@ public class Main {
 
         Battaglia.setBattaglia();
 
-
         //Equilibrio.setup();
 
         /*System.out.println("Numero elementi " + Grafo.getNodi().size());

@@ -2,6 +2,10 @@ package it.unibs.fp.tamagolem;
 
 
 import it.unibs.fp.mylib.NumeriCasuali;
+import it.unibs.fp.tamagolem.grafo.Grafo;
+import it.unibs.fp.tamagolem.grafo.Nodo;
+import it.unibs.fp.tamagolem.utility.Costante;
+import it.unibs.fp.tamagolem.utility.Utente;
 
 import java.util.ArrayList;
 

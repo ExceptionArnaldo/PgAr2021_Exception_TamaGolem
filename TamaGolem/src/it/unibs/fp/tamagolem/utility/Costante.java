@@ -1,4 +1,6 @@
-package it.unibs.fp.tamagolem;
+package it.unibs.fp.tamagolem.utility;
+
+import it.unibs.fp.tamagolem.grafo.Grafo;
 
 public class Costante {
 

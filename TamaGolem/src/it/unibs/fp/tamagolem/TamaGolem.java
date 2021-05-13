@@ -1,5 +1,8 @@
 package it.unibs.fp.tamagolem;
 
+import it.unibs.fp.tamagolem.utility.Costante;
+import it.unibs.fp.tamagolem.utility.Utente;
+
 import java.util.*;
 
 public class TamaGolem {

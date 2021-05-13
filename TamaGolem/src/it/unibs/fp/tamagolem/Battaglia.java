@@ -3,6 +3,9 @@ package it.unibs.fp.tamagolem;
 import it.unibs.fp.mylib.BelleStringhe;
 import it.unibs.fp.mylib.InputDati;
 import it.unibs.fp.mylib.MyTime;
+import it.unibs.fp.tamagolem.grafo.Grafo;
+import it.unibs.fp.tamagolem.utility.Costante;
+import it.unibs.fp.tamagolem.utility.Utente;
 
 public class Battaglia {
 
@@ -20,8 +23,6 @@ public class Battaglia {
         Equilibrio.setup(); // genera un nuovo equilibrio
         Utente.stampa(BelleStringhe.stampaStringaCorniceCentrato(Costante.MSG_EQUILIBRIO));
         MyTime.wait(Costante.C2); // in ogni videogioco che si rispetti serve un po' di tempo di caricamento
-
-        //MenuG.menuPrincipale();
 
         g1 = new Giocatore();
         g2 = new Giocatore();

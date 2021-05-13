@@ -1,5 +1,8 @@
 package it.unibs.fp.tamagolem;
 
+import it.unibs.fp.tamagolem.grafo.Grafo;
+import it.unibs.fp.tamagolem.utility.Costante;
+
 import java.util.HashMap;
 import java.util.Map;
 

@@ -2,6 +2,8 @@ package it.unibs.fp.tamagolem;
 
 import it.unibs.fp.mylib.BelleStringhe;
 import it.unibs.fp.mylib.InputDati;
+import it.unibs.fp.tamagolem.utility.Costante;
+import it.unibs.fp.tamagolem.utility.Utente;
 
 public class Giocatore {
 
@@ -51,11 +53,7 @@ public class Giocatore {
     public TamaGolem getGolem() {
         return golem;
     }
-/*
-    public void setGolem(TamaGolem golem) {
-        this.golem = golem;
-    }
-*/
+
     public int getGolem_evocati() {
         return golem_evocati;
     }
