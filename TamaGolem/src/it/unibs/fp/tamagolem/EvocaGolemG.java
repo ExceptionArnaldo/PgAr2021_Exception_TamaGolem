@@ -7,15 +7,19 @@ import java.awt.event.ActionListener;
 
 public class EvocaGolemG {
 
-    public static void evocazioneGolem(int numero_elementi){
+    private static boolean prima_volta = true;
+
+    public static void evocazioneGolem(){
+
+        int numero_elementi = Grafo.getNodi().size();
 
         JFrame frame = new JFrame();
-        frame.setSize(700, 700);
+        frame.setSize(700, 800);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
 
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(9, 2, 10, 10));
+        panel.setLayout(new GridLayout(15, 1, 10, 10));
         JLabel label_nome = new JLabel("Nome del golem : ");
         label_nome.setHorizontalAlignment(JLabel.CENTER);
 
@@ -25,7 +29,11 @@ public class EvocaGolemG {
         button_conferma.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ScontroGUI.scontro(new String[] {"1", "2"});
+                if(prima_volta) {
+                    evocazioneGolem();
+                    prima_volta = false;
+                }
+                else ScontroGUI.scontro(new String[] {"1", "2"});
                 frame.dispose();
             }
         });
@@ -47,6 +55,15 @@ public class EvocaGolemG {
         }
 
         panel.add(button_conferma);
+
+        // tabella delle pietre rimanenti
+        JLabel pietre_rimaste[] = new JLabel[Grafo.getNodi().size()];
+
+        for(int i = 0; i < Grafo.getNodi().size(); i++){
+            String tipo = Grafo.getNodi().get(i).getNome();
+            pietre_rimaste[i] = new JLabel(tipo + " x " + Pietra.getScorta_comune().get(tipo));
+            panel.add(pietre_rimaste[i]);
+        }
 
         frame.add(panel);
 

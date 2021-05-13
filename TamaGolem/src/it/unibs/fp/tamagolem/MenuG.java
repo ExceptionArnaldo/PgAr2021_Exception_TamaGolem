@@ -8,6 +8,9 @@ import java.awt.event.ActionListener;
 
 public class MenuG {
 
+    private static JLabel giocatore1 = new JLabel("Nome del giocatore 1 : ");
+    private static JLabel giocatore2 = new JLabel("Nome del giocatore 2 : ");
+
     public static void menuPrincipale(){
 
         JFrame frame = new JFrame();
@@ -72,22 +75,19 @@ public class MenuG {
         button_facile.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                sceltaNomiGiocatori(TamaGolem.getNumero_pietre());
+                sceltaNomiGiocatori();
                 frame.dispose();
             }
         });
     }
 
-    public static void sceltaNomiGiocatori(int numero_elementi){
+    public static void sceltaNomiGiocatori(){
         JFrame frame = new JFrame();
         frame.setSize(400, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
 
         JPanel panel = new JPanel();
-
-        JLabel giocatore1 = new JLabel("Nome del giocatore 1 : ");
-        JLabel giocatore2 = new JLabel("Nome del giocatore 2 : ");
 
         giocatore1.setHorizontalAlignment(JLabel.CENTER);
         giocatore1.setForeground(Color.red);
@@ -102,7 +102,12 @@ public class MenuG {
         button_avanti.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                EvocaGolemG.evocazioneGolem(numero_elementi);
+                Giocatore g1 = new Giocatore();
+                g1.setNome(getNomeGiocatore1());
+                Giocatore g2 = new Giocatore();
+                g2.setNome(g1.getNome());
+                EvocaGolemG.evocazioneGolem();
+                //EvocaGolemG.evocazioneGolem(numero_elementi);
                 frame.dispose();
             }
         });
@@ -119,5 +124,13 @@ public class MenuG {
 
         frame.setVisible(true);
 
+    }
+
+    public static String getNomeGiocatore1(){
+        return giocatore1.getText();
+    }
+
+    public static String getNomeGiocatore2(){
+        return giocatore2.getText();
     }
 }
