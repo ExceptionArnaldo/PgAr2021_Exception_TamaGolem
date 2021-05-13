@@ -4,15 +4,13 @@ import java.util.*;
 
 public class TamaGolem {
 
-    private static int numero_pietre = (int) Math.ceil((float) (Grafo.getNodi().size() + Costante.C1) / Costante.C3 + Costante.C1);
     private String nome;
-    private int vita_totale = Costante.VITA_TAMAGOLEM;
-    private int vita_attuale = vita_totale;
+    private int vita_attuale = Costante.VITA_TAMAGOLEM;
     private boolean morto = false;
     private Queue<Pietra> pietre = new LinkedList<>();
 
     public void assegnaPietre() { // assegna le pietre ad un golem
-        for (int i = Costante.C0; i < numero_pietre; i++) {
+        for (int i = Costante.C0; i < Costante.NUMERO_PIETRE_GOLEM; i++) {
             Pietra pietra_attuale = new Pietra(Elemento.getElemento(Utente.sceltaPietra()));
 
             pietre.add(pietra_attuale);
@@ -25,20 +23,12 @@ public class TamaGolem {
         pietre.remove();
     }
 
-    public static int getNumero_pietre() {
-        return numero_pietre;
-    }
-
     public String getNome() {
         return nome;
     }
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public int getVita_totale() {
-        return vita_totale;
     }
 
     public Queue<Pietra> getPietre() {
