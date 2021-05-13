@@ -137,10 +137,9 @@ public class Battaglia {
     }
 
     private static void controllaUguaglianzaPietre() {
-        if (count > TamaGolem.getNumero_pietre()) {
+        if (count > Costante.NUMERO_PIETRE_GOLEM) {
             Utente.stampa(Costante.MSG_GIOCATORI_INCOMPETENTI);
             System.exit(0);
         }
-
     }
 }

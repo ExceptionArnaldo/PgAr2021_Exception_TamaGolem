@@ -72,7 +72,7 @@ public class MenuG {
         button_facile.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                sceltaNomiGiocatori(TamaGolem.getNumero_pietre());
+                sceltaNomiGiocatori(Costante.NUMERO_PIETRE_GOLEM);
                 frame.dispose();
             }
         });

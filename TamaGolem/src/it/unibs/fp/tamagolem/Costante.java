@@ -8,7 +8,11 @@ public class Costante {
     public static final int C2 = 2;
     public static final int C3 = 3;
 
-    public static final int VITA_TAMAGOLEM = 10;
+    // formule
+    public static final int NUMERO_PIETRE_GOLEM = (int) Math.ceil((float) (Grafo.getNodi().size() + C1) / C3 + C1);
+    public static final int NUMERO_GOLEM = (int) Math.ceil((float) (Grafo.getNodi().size() - C1) * (Grafo.getNodi().size() - C2) / (C2 * NUMERO_PIETRE_GOLEM));
+    public static final int NUMERO_PIETRE_PER_TIPO = (int) Math.ceil((float) Costante.C2 * NUMERO_PIETRE_GOLEM * Costante.NUMERO_GOLEM / Grafo.getNodi().size());
+    public static final int VITA_TAMAGOLEM = 10 * Grafo.getNodi().size();
 
     // Costanti livello difficolta'
     public static final int MAX_FACILE = 5;
@@ -40,7 +44,7 @@ public class Costante {
     public static final String MSG_PIETRA_SUPEREFFICACE = "Altro che Pokemon, l'elemento %s e' superefficace sull'elemento %s";
     public static final String MSG_PIETRA_UGUALE = "OH NO, le pietre dello stesso elemento si annullano a vicenda";
     public static final String MSG_RUOTA_PIETRA = "I TamaGolem si stanno preparando alla prossima mossa!";
-    public static final String MSG_MORTE_GOLEM = "%s era proprio scarso, %s gli ha rotto il ****";
+    public static final String MSG_MORTE_GOLEM = "%s era proprio scarso, %s gli ha rotto il ****\n\t\t༼▀̿̿Ĺ̯̿̿▀̿ ̿༽=ε/̵͇̿̿/’̿’̿ ̿ ̿̿ ̿̿ ̿̿༼ ຈل͜ຈ༽";
     public static final String MSG_VITA_RIMANENTE = "Al Tamagolem %s rimangono %s HP";
     public static final String MSG_VINCITORE = "CONGRATULAZIONI %s, SEI IL VINCITORE DI QUESTA INCREDIBILE BATTAGLIA ! ! !";
     public static final String MSG_RIVINDITA = "%s sei un alievo abbastanza scarso, ma puoi rifarti in una NUOVA INCREDIBILE BATTAGLIA ! ! !";
@@ -51,7 +55,7 @@ public class Costante {
     public static final String MSG_STAMPA_EQUILIBRIO = "%s --> %d --> %s\n";
     public static final String MSG_GIOCATORI_INCOMPETENTI = "Avete poca fantasia, andate a giocare a Pokemon, vi risultera' meno complicato!";
 
-    public static final String[] GOLEM = {"(҂◡̀_◡́)ᕤ", "(ง︡'-'︠)ง", "ᕙ( ︡'︡益'︠)ง", "ヽ༼ ・ ل͜ ・ ༽ﾉ", "(╥︣﹏᷅╥)", "(⊙.⊙(◉̃_᷅◉)⊙.⊙)",};
+    public static final String[] GOLEM = {"(҂◡̀_◡́)ᕤ", "(ง︡'-'︠)ง", "ᕙ( ︡'︡益'︠)ง", "ヽ༼ ・ ل͜ ・ ༽ﾉ", "(╥︣﹏᷅╥)", "ヽ༼ ಠ益ಠ ༽ﾉ","ᕦ⊙෴⊙ᕤ", "ᕦ(◉෴◉)ᕥ","ᕙ(˵ ಠ ਊ ಠ ˵)ᕗ","༼ ºل͟º༼ ºل͟º༼ ºل͟º༼ ºل͟º ༽ºل͟º ༽ºل͟º ༽ºل͟º ༽"};
 
     // Messaggi per continuare
     public static final String MSG_PREMI_PER_CONTINUARE = "Premi qualsiasi tasto per continuare ";
