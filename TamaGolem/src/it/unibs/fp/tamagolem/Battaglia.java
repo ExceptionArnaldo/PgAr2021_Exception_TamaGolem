@@ -8,6 +8,7 @@ public class Battaglia {
 
     private static Giocatore g1;
     private static Giocatore g2;
+    static int count = Costante.C0;
 
     public static void setBattaglia() {
         Utente.stampa(Costante.MSG_BENVENUTI);
@@ -35,7 +36,7 @@ public class Battaglia {
     private static void battaglia() {
 
         while (!g1.getSconfitto() && !g2.getSconfitto()) { // fino a quando i giocatori sono entrambi vivi
-            Utente.stampa(BelleStringhe.incornicia(String.format(Costante.MSG_INIZIO_BATTAGLIA, g1.getGolem().getNome(), g2.getGolem().getNome())));
+            Utente.stampa(BelleStringhe.stampaStringaCorniceCentrato(String.format(Costante.MSG_INIZIO_BATTAGLIA, g1.getGolem().getNome(), g2.getGolem().getNome())));
 
             while (g1.getGolem().getVita_attuale() > Costante.C0 && g2.getGolem().getVita_attuale() > Costante.C0) { // fino a quando i TamaGolem sono entrambi vivi
 
@@ -71,6 +72,8 @@ public class Battaglia {
         int danno = Grafo.getMat_ad()[Equilibrio.posizioneNodo(pietra1)][Equilibrio.posizioneNodo(pietra2)]; // calcola interazione fra le pietre e restituisce il danno
         if (danno == Costante.C0) { // pietre dello stesso tipo, non succede nulla
             Utente.stampa(Costante.MSG_PIETRA_UGUALE);
+            count++;
+            controllaUguaglianzaPietre(); // controllo ripetizione pietre
             return false;
         } else if (danno < Costante.C0) { // in base al segno del danno si modifica la vita del Golem perdente
             infliggiDanno(g2, g1, danno);
@@ -99,7 +102,8 @@ public class Battaglia {
     }
 
     private static void infliggiDanno(Giocatore vincente, Giocatore perdente, int danno) { // decrementa la vita del golem perdente
-        Utente.stampa(BelleStringhe.incornicia(String.format(Costante.MSG_PIETRA_SUPEREFFICACE, vincente.getGolem().getPietre().element().getTipo().toString(), perdente.getGolem().getPietre().element().getTipo().toString())));
+        count = Costante.C0;
+        Utente.stampa(BelleStringhe.incorniciaCentrato(String.format(Costante.MSG_PIETRA_SUPEREFFICACE, vincente.getGolem().getPietre().element().getTipo().toString(), perdente.getGolem().getPietre().element().getTipo().toString()), Costante.MSG_PIETRA_SUPEREFFICACE.length()));
         perdente.getGolem().setVita_attuale(perdente.getGolem().getVita_attuale() - Math.abs(danno));
     }
 
@@ -130,5 +134,13 @@ public class Battaglia {
             Utente.stampa(Costante.MSG_SALUTO_FINALE); // saluto finale e chiusura programma
             System.exit(0);
         }
+    }
+
+    private static void controllaUguaglianzaPietre() {
+        if (count > TamaGolem.getNumero_pietre()) {
+            Utente.stampa(Costante.MSG_GIOCATORI_INCOMPETENTI);
+            System.exit(0);
+        }
+
     }
 }

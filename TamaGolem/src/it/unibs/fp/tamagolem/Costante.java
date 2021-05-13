@@ -28,8 +28,8 @@ public class Costante {
 
     public static final String MSG_EQUILIBRIO = "Generazione dell' equilibrio...";
 
-    public static final String GIOCATORE1 = "Primo Alievo";
-    public static final String GIOCATORE2 = "Secondo Alievo";
+    public static final String GIOCATORE1 = "Primo Allievo";
+    public static final String GIOCATORE2 = "Secondo Allievo";
     public static final String MSG_SCELTA_NOME = "%s, scegli il tuo nome: ";
 
     public static final String MSG_ASSEGNA_PIETRE = "Scegli la pietra per il tuo TamaGolem";
@@ -44,19 +44,20 @@ public class Costante {
     public static final String MSG_VITA_RIMANENTE = "Al Tamagolem %s rimangono %s HP";
     public static final String MSG_VINCITORE = "CONGRATULAZIONI %s, SEI IL VINCITORE DI QUESTA INCREDIBILE BATTAGLIA ! ! !";
     public static final String MSG_RIVINDITA = "%s sei un alievo abbastanza scarso, ma puoi rifarti in una NUOVA INCREDIBILE BATTAGLIA ! ! !";
-    public static final String RIVINDITA = "Volete giocare ancora?";
+    public static final String RIVINDITA = "Volete giocare ancora? ";
     public static final String MSG_SALUTO_FINALE = "Arrivederci allievi, alla prossima!";
     public static final String MSG_PREPARE_GOLEM = "Prepare il tuo TamaGolem alla battaglia, fagli ingurgitare %d pietre";
     public static final String FRECCIA = " --> ";
     public static final String MSG_STAMPA_EQUILIBRIO = "%s --> %d --> %s\n";
+    public static final String MSG_GIOCATORI_INCOMPETENTI = "Avete poca fantasia, andate a giocare a Pokemon, vi risultera' meno complicato!";
 
     public static final String[] GOLEM = {"(҂◡̀_◡́)ᕤ", "(ง︡'-'︠)ง", "ᕙ( ︡'︡益'︠)ง", "ヽ༼ ・ ل͜ ・ ༽ﾉ", "(╥︣﹏᷅╥)", "(⊙.⊙(◉̃_᷅◉)⊙.⊙)",};
 
     // Messaggi per continuare
-    public static final String MSG_PREMI_PER_CONTINUARE = "Premi qualsiasi taso per continuare";
+    public static final String MSG_PREMI_PER_CONTINUARE = "Premi qualsiasi tasto per continuare ";
     public static final String NON_PROPRIO_QUALSIASI = "Non proprio qualsiasi... ";
     public static final String MSG_GIA_LO_SAI = "Sai gia' quale non puoi premere ";
-    public static final String MSG_NASCONDI_AVVERSARIO = "Nascondi le tue scelte all' avversario";
-    public static final String MSG_BRUTTA_FINE = "OPS, qualcuno ha fatto una brutta fine";
+    public static final String MSG_NASCONDI_AVVERSARIO = "Nascondi le tue scelte all' avversario ";
+    public static final String MSG_BRUTTA_FINE = "OPS, qualcuno ha fatto una brutta fine ";
     public static final String MSG_GIA_LO_SAI_PT2 = "Gia lo sai --> ";
 }

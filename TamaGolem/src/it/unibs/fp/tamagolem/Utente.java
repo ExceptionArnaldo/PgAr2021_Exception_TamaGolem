@@ -63,9 +63,9 @@ public class Utente {
             for (int j = Costante.C0; j < mat_equi.length; j++) {
                 if (i < j) {
                     if (mat_equi[i][j] > Costante.C0)
-                        System.out.print(BelleStringhe.stampaStringaCorniceCentrato(String.format(Costante.MSG_STAMPA_EQUILIBRIO, Equilibrio.getNodi().get(i).getNome(), Math.abs(mat_equi[i][j]), Equilibrio.getNodi().get(j).getNome())));
+                        System.out.print(BelleStringhe.stampaStringaCorniceCentrato(String.format(Costante.MSG_STAMPA_EQUILIBRIO, Equilibrio.getNodi().get(i).getNome(), mat_equi[i][j], Equilibrio.getNodi().get(j).getNome())));
                     else
-                        System.out.print(BelleStringhe.stampaStringaCorniceCentrato(String.format(Costante.MSG_STAMPA_EQUILIBRIO, Equilibrio.getNodi().get(j).getNome(), mat_equi[i][j], Equilibrio.getNodi().get(i).getNome())));
+                        System.out.print(BelleStringhe.stampaStringaCorniceCentrato(String.format(Costante.MSG_STAMPA_EQUILIBRIO, Equilibrio.getNodi().get(j).getNome(), Math.abs(mat_equi[i][j]), Equilibrio.getNodi().get(i).getNome())));
                 }
             }
         }
