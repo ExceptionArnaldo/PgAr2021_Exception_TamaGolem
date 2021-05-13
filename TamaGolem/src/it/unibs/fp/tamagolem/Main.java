@@ -4,10 +4,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //Battaglia.setBattaglia();
+        Battaglia.setBattaglia();
 
 
-        Equilibrio.setup();
+        //Equilibrio.setup();
 
         /*System.out.println("Numero elementi " + Grafo.getNodi().size());
         System.out.println("Numero Golem " + Giocatore.getNumero_golem());
@@ -24,7 +24,7 @@ public class Main {
 
         //System.out.println("Pietre scorta comune" + Pietra.getScorta_comune());
 
-        MenuG.menuPrincipale();
+        //MenuG.menuPrincipale();
         //Utente.stampaEquilibrio();
 
         /*Giocatore g = new Giocatore();
