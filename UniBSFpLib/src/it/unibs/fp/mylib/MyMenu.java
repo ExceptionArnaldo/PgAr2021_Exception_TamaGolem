@@ -24,7 +24,7 @@ public class MyMenu {
 
     public int scegli() {
         stampaMenu();
-        return InputDati.leggiIntero(RICHIESTA_INSERIMENTO, 0, voci.length);
+        return InputDati.leggiIntero(RICHIESTA_INSERIMENTO, 1, voci.length);
     }
 
     public void stampaMenu() {
@@ -33,7 +33,8 @@ public class MyMenu {
             System.out.println((i + 1) + ")\t" + voci[i]);
         }
 
-        System.out.println('\n' + VOCE_USCITA + '\n');
+        //System.out.println('\n' + VOCE_USCITA + '\n');
+        System.out.println('\n');
 
     }
 
@@ -43,10 +44,5 @@ public class MyMenu {
 
     protected String[] getVoci() {
         return voci;
-    }
-
-    public static void pulisciConsole() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
     }
 }

@@ -10,7 +10,7 @@ public class Grafo {
     private static int[][] mat_ad;
 
     public Grafo(ArrayList<Nodo> nodi) {
-        this.nodi = nodi;
+        Grafo.nodi = nodi;
         mat_ad = new int[nodi.size()][nodi.size()];
     }
 
@@ -18,16 +18,8 @@ public class Grafo {
         return nodi;
     }
 
-    public void setNodi(ArrayList<Nodo> nodi) {
-        this.nodi = nodi;
-    }
-
     public static int[][] getMat_ad() {
         return mat_ad;
-    }
-
-    public void setMat_ad(int[][] mat_ad) {
-        this.mat_ad = mat_ad;
     }
 
     // metodo che setta i danni
@@ -39,11 +31,11 @@ public class Grafo {
         int danno_attuale = Costante.C0; // danno dell'i-esima riga
         int danno_s = Costante.C0; // danno della j-esima riga
 
-        for (int h = 0; h < j; h++) { // calcola il danno nell'i-esima riga
+        for (int h = Costante.C0; h < j; h++) { // calcola il danno nell'i-esima riga
             danno_attuale += mat_ad[i][h];
         }
 
-        for (int h = 0; h < i; h++) { // calcola il danno nell'j-esima riga
+        for (int h = Costante.C0; h < i; h++) { // calcola il danno nell'j-esima riga
             danno_s += mat_ad[j][h];
         }
 
@@ -71,7 +63,7 @@ public class Grafo {
             do {
                 danno = NumeriCasuali.estraiIntero(-Costante.VITA_TAMAGOLEM, Costante.VITA_TAMAGOLEM);                              // estrae un danno casuale, ovviamente, <= della vita del golem
 
-            } while (danno == 0 || danno > valore_max_a || danno < valore_min_a ||                                                  // requisiti: 1. il danno non può essere 0
+            } while (danno == Costante.C0 || danno > valore_max_a || danno < valore_min_a ||                                        // requisiti: 1. il danno non può essere 0
                     -danno > valore_max_s || -danno < valore_min_s ||                                                               // 2. il danno dev'essere compreso tra il valore_max_a e valore_min_a, e -danno, nella parte simmetrica dev'essere compreso tra valore_max_s e valore_min_s
                     ((j == mat_ad.length - Costante.C2) && danno_attuale + danno == Costante.C0) ||                                 // 3. nella penultima colonna il danno + danno_attuale non può essere zero perchè se lo fosse nell'ultima colonna comparirebbe lo 0
                     ((j == mat_ad.length - Costante.C2) && (i == mat_ad.length - Costante.C3) && danno_s - danno == Costante.C0));  // 4. stesso ragionamento nella penultima riga ma terzultima colonna perchè nella penultima colonna c'è lo 0

@@ -239,6 +239,15 @@ public class InputDati {
         System.out.println(daOutputtare);
         System.out.print(messaggio);
         lettore.next();
-        return;
+    }
+    public static void pulisciConsole() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+
+    public static void isInvioPremutoEPulisciConsole(String daOutputtare, String messaggio){
+        isInvioPremuto(daOutputtare, messaggio);
+        pulisciConsole();
+        System.out.println(System.lineSeparator());
     }
 }

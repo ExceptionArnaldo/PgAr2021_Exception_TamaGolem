@@ -19,11 +19,7 @@ public enum Elemento {
         this.id = id;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public static Elemento getElemento(String tipo) {
+    public static Elemento getElemento(String tipo) { // prende la stringa con il nome dell'elemento e restituisce il suo tipo Elemento
 
         for (Elemento el : values()) {
             if (el.name().equals(tipo)) return el;
