@@ -19,6 +19,7 @@ public class Componenti {
     public static JProgressBar creaBarraVita(int width, int height, int hp_max){
         JProgressBar vita = new JProgressBar();
         Dimension size = vita.getPreferredSize();
+        vita.setStringPainted(true);
         vita.setForeground(Color.GREEN);
         vita.setBackground(Color.RED);
         vita.setBounds(width, height, size.width, size.height);
