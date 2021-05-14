@@ -34,7 +34,7 @@ public class Utente {
         return voci_pietre[scelta - Costante.C1].substring(0, voci_pietre[scelta - Costante.C1].indexOf(' ')); // bisogna restituire solo il tipo di pietra, non la quantita'
     }
 
-    public static int sceltaDifficolta() {
+            public static int sceltaDifficolta() {
         return menu_difficolta.scegli();
     }
 

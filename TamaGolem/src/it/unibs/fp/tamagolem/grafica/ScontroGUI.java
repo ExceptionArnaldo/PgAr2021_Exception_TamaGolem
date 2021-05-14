@@ -1,51 +1,61 @@
 package it.unibs.fp.tamagolem.grafica;
 
+import it.unibs.fp.tamagolem.Giocatore;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class ScontroGUI {
 
+    private static JFrame frame_scontro;
+    private static JLabel sfondo_label;
+
+    private static Giocatore g1;
+    private static Giocatore g2;
+    public static void setScontro(){
+
+        MenuGUI.menuPrincipale();
+
+
+    }
+
     public static void scontro(String pietre[]){
-        JFrame frame = new JFrame();
-        frame.setSize(1400, 800);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
+        frame_scontro = Componenti.creaFrame(1050, 540);
+        frame_scontro.setLayout(null);
 
-        JPanel panel = new JPanel();
-        panel.setLayout(null);
-        frame.add(panel);
-
-        Insets insets = panel.getInsets();
+        sfondo_label = new JLabel("", new ImageIcon("C:\\Users\\User\\Desktop\\sfondo.jpg"), JLabel.CENTER);
+        sfondo_label.setBounds(0, 0, 1050, 540);
+        frame_scontro.add(sfondo_label);
 
         //prova
         JButton b = new JButton("prova");
-        panel.add(b);
+        sfondo_label.add(b);
         Dimension size = b.getPreferredSize();
-        b.setBounds(500 + insets.left, 5 + insets.top,
-                size.width, size.height);
+        b.setBounds(500, 5 , size.width, size.height);
 
-        //immagine del golem
-        JLabel golem = new JLabel("YES", new ImageIcon("C:\\Users\\User\\Desktop\\image.png"), JLabel.CENTER);
-        panel.add(golem);
-        size = golem.getPreferredSize();
-        golem.setBounds(5 + insets.left, 400 + insets.top,
-                size.width, size.height);
+        //immagine del golem 1
+        ImageIcon image_golem1 = new ImageIcon("C:\\Users\\User\\Desktop\\image.png");
+        JLabel golem1_label = Componenti.creaImageGolem(image_golem1, 200, 250);
+        sfondo_label.add(golem1_label);
 
-        //barra della vita
-        JProgressBar vita1 = new JProgressBar();
-        panel.add(vita1);
-        size = vita1.getPreferredSize();
-        vita1.setBounds(5 + insets.left, 650 + insets.top,
-                size.width, size.height);
-        vita1.setValue(50);
+        //barra della vita del golem 1
+        JProgressBar vita1 = Componenti.creaBarraVita(220, 470, 10);
+        sfondo_label.add(vita1);
+
+        //immagine del golem 2
+        ImageIcon image_golem2 = new ImageIcon("C:\\Users\\User\\Desktop\\golem.png");
+        JLabel golem2_label = Componenti.creaImageGolem(image_golem2, 600, 80);
+        sfondo_label.add(golem2_label);
+
+        //barra della vita del golem 2
+        JProgressBar vita2 = Componenti.creaBarraVita(620, 310, 10);
+        sfondo_label.add(vita2);
 
         // panel delle pietre
         JPanel panel_pietre = new JPanel();
-        panel.add(panel_pietre);
+        sfondo_label.add(panel_pietre);
         panel_pietre.setBorder(BorderFactory.createLineBorder(Color.black));
-        panel_pietre.setBounds(250 + insets.left, 600 + insets.top,
-                400, 100);
+        panel_pietre.setBounds(250, 600, 400, 100);
         panel_pietre.setLayout(new GridLayout(1, 3));
 
         //pietre
@@ -56,5 +66,7 @@ public class ScontroGUI {
             pietre_image[i].setHorizontalAlignment(JLabel.CENTER);
             panel_pietre.add(pietre_image[i]);
         }
+
+
     }
 }

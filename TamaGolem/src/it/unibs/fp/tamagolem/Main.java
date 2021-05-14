@@ -1,6 +1,7 @@
 package it.unibs.fp.tamagolem;
 
-import it.unibs.fp.tamagolem.grafica.MenuG;
+import it.unibs.fp.tamagolem.grafica.MenuGUI;
+import it.unibs.fp.tamagolem.grafica.ScontroGUI;
 
 public class Main {
 
@@ -8,7 +9,7 @@ public class Main {
 
         //Battaglia.setBattaglia();
 
-        Equilibrio.setup();
-        MenuG.menuPrincipale();
+        //Equilibrio.setup();
+        ScontroGUI.setScontro();
     }
 }

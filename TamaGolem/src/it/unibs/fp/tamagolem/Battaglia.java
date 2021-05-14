@@ -3,6 +3,7 @@ package it.unibs.fp.tamagolem;
 import it.unibs.fp.mylib.BelleStringhe;
 import it.unibs.fp.mylib.InputDati;
 import it.unibs.fp.mylib.MyTime;
+import it.unibs.fp.tamagolem.grafica.MenuGUI;
 import it.unibs.fp.tamagolem.grafo.Grafo;
 import it.unibs.fp.tamagolem.utility.Costante;
 import it.unibs.fp.tamagolem.utility.Utente;
@@ -14,7 +15,7 @@ public class Battaglia {
     static int count = Costante.C0;
 
     public static void setBattaglia() {
-        Utente.stampa(Costante.MSG_BENVENUTI);
+        /*Utente.stampa(Costante.MSG_BENVENUTI);
         InputDati.isInvioPremutoEPulisciConsole(Costante.MSG_PREMI_PER_CONTINUARE, Costante.NON_PROPRIO_QUALSIASI);
 
         Utente.stampa(BelleStringhe.stampaStringaCorniceCentrato(Costante.MSG_INTRO));
@@ -23,12 +24,16 @@ public class Battaglia {
         Equilibrio.setup(); // genera un nuovo equilibrio
         Utente.stampa(BelleStringhe.stampaStringaCorniceCentrato(Costante.MSG_EQUILIBRIO));
         MyTime.wait(Costante.C2); // in ogni videogioco che si rispetti serve un po' di tempo di caricamento
+*/
+        MenuGUI.menuPrincipale();
 
-        g1 = new Giocatore();
-        g2 = new Giocatore();
+        /*g1 = new Giocatore();
+        g2 = new Giocatore();*/
 
-        Utente.nomeAlievo(g1, Costante.GIOCATORE1); // Nomi giocatori
-        Utente.nomeAlievo(g2, Costante.GIOCATORE2);
+        //MenuGUI.nomeGiocatore();
+
+        /*Utente.nomeAlievo(g1, Costante.GIOCATORE1); // Nomi giocatori
+        Utente.nomeAlievo(g2, Costante.GIOCATORE2);*/
 
         g1.evocaGolem(); // evocare i primi Golem: nome + pietre
         g2.evocaGolem();

@@ -45,6 +45,10 @@ public class TamaGolem {
         return vita_totale;
     }
 
+    public void setPietre(Queue<Pietra> pietre) {
+        this.pietre = pietre;
+    }
+
     public Queue<Pietra> getPietre() {
         return pietre;
     }

@@ -19,9 +19,10 @@ public class Equilibrio {
 
     private static ArrayList<Nodo> nodi = new ArrayList<>();
 
-    public static void setup() { // inizializzazione dell' equilibrio di gioco
+    public static void setup(int difficolta) { // inizializzazione dell' equilibrio di gioco
 
-        numero_elementi = creaNumeroElemento();
+        numero_elementi = creaNumeroElemento(difficolta);
+        System.out.println(numero_elementi);
         setGrafo();
         setEquilibrio();
         Pietra.riempiScorta();
@@ -58,8 +59,7 @@ public class Equilibrio {
     }
 
     // restituisce il numero di nodi in base alla difficolta'
-    private static int creaNumeroElemento() {
-        int difficolta = Utente.sceltaDifficolta();
+    private static int creaNumeroElemento(int difficolta) {
 
         if (difficolta == Costante.C1) return NumeriCasuali.estraiIntero(MIN_ELEMENTI, Costante.MAX_FACILE);
         else if (difficolta == Costante.C2)
