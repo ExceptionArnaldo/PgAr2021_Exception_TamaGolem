@@ -25,6 +25,7 @@ public class MenuGUI {
     private static Giocatore g1;
     private static Giocatore g2;
 
+    // crea il menu principale
     public static void menuPrincipale(){
 
         frame_principale = Componenti.creaFrame(400, 400);
@@ -42,6 +43,7 @@ public class MenuGUI {
             public void actionPerformed(ActionEvent e) {
                 clickInizia(e);}});
 
+        // aggiunge i componenti
         panel_principale.add(benvenuto_label);
         panel_principale.add(inizia_btn);
         panel_principale.add(regola_btn);
@@ -56,6 +58,7 @@ public class MenuGUI {
         menuDifficolta();
     }
 
+    // crea il menu delle difficoltà
     public static void menuDifficolta(){
 
         frame_difficolta = Componenti.creaFrame(400, 400);
@@ -63,6 +66,7 @@ public class MenuGUI {
         panel_difficolta = new JPanel();
         panel_difficolta.setLayout(new GridLayout(5, 5, 10, 10));
 
+        // aggiunge gli ActionListener ai Button
         JLabel titolo_label = new JLabel("Scegliere la difficoltà");
         titolo_label.setHorizontalAlignment(JLabel.CENTER);
 
@@ -81,6 +85,7 @@ public class MenuGUI {
             public void actionPerformed(ActionEvent e) {
                 clickDifficolta(button_difficile.getText());}});
 
+        // aggiungei i componenti
         panel_difficolta.add(titolo_label);
         panel_difficolta.add(button_facile);
         panel_difficolta.add(button_medio);
@@ -101,6 +106,7 @@ public class MenuGUI {
         menuGiocatore();
     }
 
+    // finestra per la scelta dei nomi dei giocatori
     public static void menuGiocatore(){
 
         frame_giocatore = Componenti.creaFrame(400, 400);
@@ -128,6 +134,7 @@ public class MenuGUI {
             }
         });
 
+        // aggiunge i componenti
         panel_giocatore.add(giocatore1);
         panel_giocatore.add(nome_g1);
         panel_giocatore.add(giocatore2);
@@ -139,7 +146,7 @@ public class MenuGUI {
     }
 
     public static void clickAvanti(){
-        //if(controlloNome()){
+        if(controlloNome()){
             g1 = new Giocatore();
             g1.setNome(nome_g1.getText());
             g2 = new Giocatore();
@@ -147,11 +154,10 @@ public class MenuGUI {
 
             frame_giocatore.dispose();
             g1.evocaGolem();
-            //g1.evocaGolem();
-            //g2.evocaGolem();
-        //}
+        }
     }
 
+    // metodo per controllare che il nome non sia vuoto
     public static  boolean controlloNome(){
 
         if(nome_g1.getText().trim().isEmpty()) nome_g1.setBackground(Color.red);
