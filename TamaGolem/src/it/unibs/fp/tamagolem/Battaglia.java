@@ -14,7 +14,7 @@ public class Battaglia {
     static int count = Costante.C0;
 
     public static void setBattaglia() {
-        Utente.stampa(Costante.MSG_BENVENUTI);
+        Utente.stampa(BelleStringhe.stampaStringaCorniceCentrato(Costante.MSG_BENVENUTI));
         InputDati.isInvioPremutoEPulisciConsole(Costante.MSG_PREMI_PER_CONTINUARE, Costante.NON_PROPRIO_QUALSIASI);
 
         Utente.stampa(BelleStringhe.stampaStringaCorniceCentrato(Costante.MSG_INTRO));
@@ -40,6 +40,7 @@ public class Battaglia {
 
         while (!g1.getSconfitto() && !g2.getSconfitto()) { // fino a quando i giocatori sono entrambi vivi
             Utente.stampa(BelleStringhe.stampaStringaCorniceCentrato(String.format(Costante.MSG_INIZIO_BATTAGLIA, g1.getGolem().getNome(), g2.getGolem().getNome())));
+            inizioBattaglia(); // ormai piu' che un gioco sembra un meme
 
             while (g1.getGolem().getVita_attuale() > Costante.C0 && g2.getGolem().getVita_attuale() > Costante.C0) { // fino a quando i TamaGolem sono entrambi vivi
 
@@ -63,7 +64,7 @@ public class Battaglia {
     }
 
     private static void ruotaTuttePietre() { // ruota le pietre dei Golem
-        Utente.stampa(Costante.MSG_RUOTA_PIETRA);
+        Utente.stampa(BelleStringhe.stampaStringaCorniceCentrato(Costante.MSG_RUOTA_PIETRA));
         g1.getGolem().ruotaPietre();
         g2.getGolem().ruotaPietre();
     }
@@ -106,12 +107,14 @@ public class Battaglia {
 
     private static void infliggiDanno(Giocatore vincente, Giocatore perdente, int danno) { // decrementa la vita del golem perdente
         count = Costante.C0;
-        Utente.stampa(BelleStringhe.incornicia(String.format(Costante.MSG_PIETRA_SUPEREFFICACE, vincente.getGolem().getPietre().element().getTipo().toString(), perdente.getGolem().getPietre().element().getTipo().toString())));
+        Utente.stampa(BelleStringhe.stampaStringCentrato(String.format(Costante.MSG_PIETRA_SUPEREFFICACE, vincente.getGolem().getPietre().element().getTipo().toString(), perdente.getGolem().getPietre().element().getTipo().toString())));
         perdente.getGolem().setVita_attuale(perdente.getGolem().getVita_attuale() - Math.abs(danno));
     }
 
     private static void ruotaPietraNonMorto(Giocatore vincente, Giocatore perdente) { // ruota le pietre del golem vivo e setta il goelm morto come morto
         Utente.stampa(String.format(Costante.MSG_MORTE_GOLEM, perdente.getGolem().getNome(), vincente.getGolem().getNome()));
+        Utente.stampa(System.lineSeparator());
+
         vincente.getGolem().ruotaPietre();
         perdente.getGolem().setMorto(true);
     }
@@ -126,14 +129,17 @@ public class Battaglia {
     }
 
     private static void StampaVincitoreChiedeRivincita(Giocatore vincente, Giocatore perdente) {
-        Utente.stampa(String.format(Costante.MSG_VINCITORE, vincente.getNome()));
+        Utente.stampa(BelleStringhe.stampaStringaCorniceCentrato(String.format(Costante.MSG_VINCITORE, vincente.getNome())));
         Utente.stampa(String.format(Costante.MSG_RIVINDITA, perdente.getNome()));
 
+        Utente.stampa(BelleStringhe.stampaStringaCorniceCentrato(Costante.MSG_EQUILIBRIO_IN_CORSO));
+        MyTime.wait(Costante.C1);
         Utente.stampaEquilibrio();
 
-        if (InputDati.yesOrNo(Costante.RIVINDITA)) // chiede di rigiocare
+        if (InputDati.yesOrNo(Costante.RIVINDITA)) { // chiede di rigiocare
+            InputDati.pulisciConsole();
             setBattaglia();
-        else {
+        } else {
             Utente.stampa(Costante.MSG_SALUTO_FINALE); // saluto finale e chiusura programma
             System.exit(0);
         }
@@ -143,6 +149,18 @@ public class Battaglia {
         if (count > Costante.NUMERO_PIETRE_GOLEM) {
             Utente.stampa(Costante.MSG_GIOCATORI_INCOMPETENTI);
             System.exit(0);
+        }
+    }
+
+    private static void inizioBattaglia() {
+        int i = Costante.C0;
+        while (!InputDati.yesOrNo(BelleStringhe.rigaIsolata(Costante.MSG_START))) {
+            i++;
+            if (i > Costante.C2) {
+                Utente.stampa(Costante.MSG_GIOCO_IMPAZZIENTE);
+                MyTime.wait(Costante.C2);
+                return;
+            }
         }
     }
 }

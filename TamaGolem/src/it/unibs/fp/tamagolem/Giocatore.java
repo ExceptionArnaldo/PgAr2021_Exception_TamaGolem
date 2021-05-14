@@ -26,7 +26,7 @@ public class Giocatore {
             Utente.stampa(BelleStringhe.incornicia(String.format(Costante.MSG_GOLEM_CREATO, golem.getNome())));
 
             Utente.stampaGolemBrutto();
-            InputDati.isInvioPremutoEPulisciConsole(Costante.MSG_PREMI_PER_CONTINUARE, Costante.MSG_NASCONDI_AVVERSARIO);
+            InputDati.isInvioPremutoEPulisciConsole(Costante.MSG_NASCONDI_AVVERSARIO, Costante.MSG_PREMI_PER_CONTINUARE);
         }
     }
 

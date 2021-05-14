@@ -18,11 +18,10 @@ public class Utente {
     private final static MyMenu menu_difficolta = new MyMenu(Costante.MSG_SCELTA_DIFFICOLTA, voci_difficolta);
 
     private static void assegnaVociPietre() { // Menu delle pietre disponibili da assegnare
-        // SI PUO' MIGLIORARE
         voci_pietre = new String[Pietra.getScorta_comune().size()];
         for (int i = Costante.C0; i < Pietra.getScorta_comune().size(); i++) { // il menu mostra solo le piere ancora disponibili e quante ne restano per tipo
             voci_pietre[i] = Pietra.getScorta_comune().keySet().toArray()[i].toString() + Costante.FRECCIA + Pietra.getScorta_comune().get(Pietra.getScorta_comune().keySet().toArray()[i]); // si e' un po' brutto
-            //Pietra.getScorta_comune().forEach((key, value) -> voci_pietre[i] = key + " " + value);
+            //Pietra.getScorta_comune().forEach((key, value) -> voci_pietre[i] = key + Costante.FRECCIA + value);
         }
         menu_pietra = new MyMenu(Costante.MSG_ASSEGNA_PIETRE, voci_pietre);
     }
@@ -47,7 +46,7 @@ public class Utente {
         stampa("");
     }
 
-    // stampa la matrice delle adiacenze
+    // stampa la matrice dell' equilibrio, nela caso vi servisse...
     /*public static void stampaMatrice() {
 
         int[][] mat_equi = Grafo.getMat_ad();
@@ -77,5 +76,10 @@ public class Utente {
 
     public static void stampaGolemBrutto() { // e' un' idea carina dai...
         stampa(Costante.GOLEM[EstrazioniCasuali.estraiIntero(Costante.C0, Costante.GOLEM.length - Costante.C1)]);
+    }
+
+    public static void easterEgg() {
+        stampa("Mi dispiace ma siete dei finti Allievi, non siete degni di sfidarvi in battaglia");
+        System.exit(0);
     }
 }

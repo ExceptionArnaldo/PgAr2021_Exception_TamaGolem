@@ -9,6 +9,7 @@ public class Costante {
     public static final int C1 = 1;
     public static final int C2 = 2;
     public static final int C3 = 3;
+    public static final int LIMITE = 1000;
 
     // formule
     public static final int NUMERO_PIETRE_GOLEM = (int) Math.ceil((float) (Grafo.getNodi().size() + C1) / C3 + C1);
@@ -51,19 +52,50 @@ public class Costante {
     public static final String MSG_VINCITORE = "CONGRATULAZIONI %s, SEI IL VINCITORE DI QUESTA INCREDIBILE BATTAGLIA ! ! !";
     public static final String MSG_RIVINDITA = "%s sei un alievo abbastanza scarso, ma puoi rifarti in una NUOVA INCREDIBILE BATTAGLIA ! ! !";
     public static final String RIVINDITA = "Volete giocare ancora? ";
-    public static final String MSG_SALUTO_FINALE = "Arrivederci allievi, alla prossima!";
     public static final String MSG_PREPARE_GOLEM = "Prepare il tuo TamaGolem alla battaglia, fagli ingurgitare %d pietre";
     public static final String FRECCIA = " --> ";
     public static final String MSG_STAMPA_EQUILIBRIO = "%s --> %d --> %s\n";
     public static final String MSG_GIOCATORI_INCOMPETENTI = "Avete poca fantasia, andate a giocare a Pokemon, vi risultera' meno complicato!";
+    public static final String MSG_EQUILIBRIO_IN_CORSO = "Stampa dell'equilibrio in corso...";
+    public static final String MSG_START = "ALLENATORI... Ehm... ALLIEVI, siete pronti all'incredibile battaglia??";
+    public static final String MSG_GIOCO_IMPAZZIENTE = "Non importa se siete davvero pronti... CHE L'INCREDIBILE BATTAGLIA ABBIA INIZIO!!!";
 
-    public static final String[] GOLEM = {"(҂◡̀_◡́)ᕤ", "(ง︡'-'︠)ง", "ᕙ( ︡'︡益'︠)ง", "ヽ༼ ・ ل͜ ・ ༽ﾉ", "(╥︣﹏᷅╥)", "ヽ༼ ಠ益ಠ ༽ﾉ","ᕦ⊙෴⊙ᕤ", "ᕦ(◉෴◉)ᕥ","ᕙ(˵ ಠ ਊ ಠ ˵)ᕗ","༼ ºل͟º༼ ºل͟º༼ ºل͟º༼ ºل͟º ༽ºل͟º ༽ºل͟º ༽ºل͟º ༽"};
+    public static final String[] GOLEM = {"(҂◡̀_◡́)ᕤ", "(ง︡'-'︠)ง", "ᕙ( ︡'︡益'︠)ง", "ヽ༼ ・ ل͜ ・ ༽ﾉ", "(╥︣﹏᷅╥)", "ヽ༼ ಠ益ಠ ༽ﾉ", "ᕦ⊙෴⊙ᕤ", "ᕦ(◉෴◉)ᕥ", "ᕙ(˵ ಠ ਊ ಠ ˵)ᕗ", "༼ ºل͟º༼ ºل͟º༼ ºل͟º༼ ºل͟º ༽ºل͟º ༽ºل͟º ༽ºل͟º ༽"};
 
     // Messaggi per continuare
     public static final String MSG_PREMI_PER_CONTINUARE = "Premi qualsiasi tasto per continuare ";
-    public static final String NON_PROPRIO_QUALSIASI = "Non proprio qualsiasi... ";
-    public static final String MSG_GIA_LO_SAI = "Sai gia' quale non puoi premere ";
+    public static final String NON_PROPRIO_QUALSIASI = "Non proprio qualsiasi... Premi Invio! ";
+    public static final String MSG_GIA_LO_SAI = "Sai gia' quali non puoi premere ";
     public static final String MSG_NASCONDI_AVVERSARIO = "Nascondi le tue scelte all' avversario ";
     public static final String MSG_BRUTTA_FINE = "OPS, qualcuno ha fatto una brutta fine ";
     public static final String MSG_GIA_LO_SAI_PT2 = "Gia lo sai --> ";
+
+    // Non fatevi domande
+    public static final String MSG_SALUTO_FINALE = "ok\n" +
+            "────────────────────────────────\n" +
+            "───────────────██████████───────\n" +
+            "──────────────████████████──────\n" +
+            "──────────────██────────██──────\n" +
+            "──────────────██▄▄▄▄▄▄▄▄▄█──────\n" +
+            "──────────────██▀███─███▀█──────\n" +
+            "█─────────────▀█────────█▀──────\n" +
+            "██──────────────────█───────────\n" +
+            "─█──────────────██──────────────\n" +
+            "█▄────────────████─██──████\n" +
+            "─▄███████████████──██──██████ ──\n" +
+            "────█████████████──██──█████████\n" +
+            "─────────────████──██─█████──███\n" +
+            "──────────────███──██─█████──███\n" +
+            "──────────────███─────█████████\n" +
+            "──────────────██─────████████▀\n" +
+            "────────────────██████████\n" +
+            "────────────────██████████\n" +
+            "─────────────────████████\n" +
+            "──────────────────██████████▄▄\n" +
+            "────────────────────█████████▀\n" +
+            "─────────────────────████──███\n" +
+            "────────────────────▄████▄──██\n" +
+            "────────────────────██████───▀\n" +
+            "────────────────────▀▄▄▄▄▀\n" +
+            "\n";
 }

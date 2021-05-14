@@ -9,11 +9,11 @@ import java.util.Scanner;
 public class InputDati {
     private static Scanner lettore = creaScanner();
 
-    private final static String ERRORE_FORMATO = "Attenzione: il dato inserito non e' nel formato corretto";
-    private final static String ERRORE_MINIMO = "Attenzione: e' richiesto un valore maggiore o uguale a ";
-    private final static String ERRORE_STRINGA_VUOTA = "Attenzione: non hai inserito alcun carattere";
-    private final static String ERRORE_MASSIMO = "Attenzione: e' richiesto un valore minore o uguale a ";
-    private final static String MESSAGGIO_AMMISSIBILI = "Attenzione: i caratteri ammissibili sono: ";
+    private final static String ERRORE_FORMATO = "Mi vuoi per caso rompere? Inserisci un dato valido";
+    private final static String ERRORE_MINIMO = "Non prendermi in giro e scegli un valore maggiore o uguale a ";
+    private final static String ERRORE_STRINGA_VUOTA = "Non hai inserito alcun carattere, non sei molto fantasioso eh";
+    private final static String ERRORE_MASSIMO = "Non prendermi in giro e scegli un valore minore o uguale a ";
+    private final static String MESSAGGIO_AMMISSIBILI = "Non e' quello che ti ho chiesto. I caratteri ammissibili sono: ";
 
     public final static char RISPOSTA_SI = 'S';
     public final static char RISPOSTA_NO = 'N';
@@ -238,14 +238,35 @@ public class InputDati {
     public static void isInvioPremuto(String daOutputtare, String messaggio) {
         System.out.println(daOutputtare);
         System.out.print(messaggio);
-        lettore.next();
-    }
-    public static void pulisciConsole() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+        //lettore.next();
+        try {
+            System.in.read();
+        } catch (Exception e) {
+        }
+        //System.out.flush();
+        //lettore.nextLine();
     }
 
-    public static void isInvioPremutoEPulisciConsole(String daOutputtare, String messaggio){
+    /*public static void pulisciConsole() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }*/
+
+    public static void pulisciConsole() {
+        try {
+            final String os = System.getProperty("os.name");
+
+            if (os.contains("Windows")) {
+                Runtime.getRuntime().exec("cls");
+            } else {
+                Runtime.getRuntime().exec("clear");
+            }
+        } catch (final Exception e) {
+            //  Handle any exceptions.
+        }
+    }
+
+    public static void isInvioPremutoEPulisciConsole(String daOutputtare, String messaggio) {
         isInvioPremuto(daOutputtare, messaggio);
         pulisciConsole();
         System.out.println(System.lineSeparator());

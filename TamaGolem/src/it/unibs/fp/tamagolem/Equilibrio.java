@@ -1,6 +1,5 @@
 package it.unibs.fp.tamagolem;
 
-
 import it.unibs.fp.mylib.NumeriCasuali;
 import it.unibs.fp.tamagolem.grafo.Grafo;
 import it.unibs.fp.tamagolem.grafo.Nodo;
@@ -28,7 +27,7 @@ public class Equilibrio {
     }
 
     // metodo pre creare il grafo
-    public static void setGrafo() {
+    private static void setGrafo() {
 
         int random;
         int numero_nodi = Costante.C0;
@@ -50,7 +49,7 @@ public class Equilibrio {
     }
 
     // set l'equilibrio degli elementi
-    public static void setEquilibrio() {
+    private static void setEquilibrio() {
         for (int i = Costante.C0; i < grafo.getNodi().size(); i++) {
             for (int j = i; j < grafo.getNodi().size(); j++) {
                 grafo.setPeso(grafo.getNodi().get(i), grafo.getNodi().get(j));

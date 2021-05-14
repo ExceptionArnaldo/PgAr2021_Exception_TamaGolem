@@ -2,6 +2,7 @@ package it.unibs.fp.tamagolem.grafo;
 
 import it.unibs.fp.mylib.NumeriCasuali;
 import it.unibs.fp.tamagolem.utility.Costante;
+import it.unibs.fp.tamagolem.utility.Utente;
 
 import java.util.ArrayList;
 
@@ -61,13 +62,19 @@ public class Grafo {
             valore_max_s = Costante.VITA_TAMAGOLEM - (-Costante.VITA_TAMAGOLEM * pos_rim_s) - danno_s;          // stesso ragionamento per la j-riga
             valore_min_s = -Costante.VITA_TAMAGOLEM - (Costante.VITA_TAMAGOLEM * pos_rim_s) - danno_s;
 
+            int count = Costante.C0;
             do {
                 danno = NumeriCasuali.estraiIntero(-Costante.VITA_TAMAGOLEM, Costante.VITA_TAMAGOLEM);                              // estrae un danno casuale, ovviamente, <= della vita del golem
+
+                count++;
+                if (count > Costante.LIMITE)
+                    Utente.easterEgg();
 
             } while (danno == Costante.C0 || danno > valore_max_a || danno < valore_min_a ||                                        // requisiti: 1. il danno non può essere 0
                     -danno > valore_max_s || -danno < valore_min_s ||                                                               // 2. il danno dev'essere compreso tra il valore_max_a e valore_min_a, e -danno, nella parte simmetrica dev'essere compreso tra valore_max_s e valore_min_s
                     ((j == mat_ad.length - Costante.C2) && danno_attuale + danno == Costante.C0) ||                                 // 3. nella penultima colonna il danno + danno_attuale non può essere zero perchè se lo fosse nell'ultima colonna comparirebbe lo 0
                     ((j == mat_ad.length - Costante.C2) && (i == mat_ad.length - Costante.C3) && danno_s - danno == Costante.C0));  // 4. stesso ragionamento nella penultima riga ma terzultima colonna perchè nella penultima colonna c'è lo 0
+
 
             mat_ad[i][j] = danno;
             mat_ad[j][i] = -danno;
