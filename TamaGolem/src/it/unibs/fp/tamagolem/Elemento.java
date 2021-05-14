@@ -7,7 +7,7 @@ public enum Elemento {
     ARIA(2),
     ACQUA(3),
     ERBA(4),
-    MONTAGNA(5),
+    PIPPOFRANCO(5),
     TENEBRA(6),
     SPETTRO(7),
     SCINTILLA(8),

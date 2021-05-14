@@ -22,7 +22,7 @@ public class Battaglia {
 
         Equilibrio.setup(); // genera un nuovo equilibrio
         Utente.stampa(BelleStringhe.stampaStringaCorniceCentrato(Costante.MSG_EQUILIBRIO));
-        MyTime.wait(Costante.C2); // in ogni videogioco che si rispetti serve un po' di tempo di caricamento
+        MyTime.wait(Costante.C2); // in ogni videogioco che si rispetti serve un po' di tempo di caricamento XD
 
         g1 = new Giocatore();
         g2 = new Giocatore();
