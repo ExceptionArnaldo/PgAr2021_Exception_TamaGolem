@@ -48,7 +48,6 @@ public class Battaglia {
                     verificaMorte();
                 else {
                     ruotaTuttePietre();
-                    Utente.stampa(System.lineSeparator());
                 }
                 MyTime.wait(Costante.C2);
             }
@@ -146,7 +145,7 @@ public class Battaglia {
     }
 
     private static void controllaUguaglianzaPietre() {
-        if (count > Costante.NUMERO_PIETRE_GOLEM) {
+        if (count > TamaGolem.getNumero_pietre_goelm()) {
             Utente.stampa(Costante.MSG_GIOCATORI_INCOMPETENTI);
             System.exit(0);
         }

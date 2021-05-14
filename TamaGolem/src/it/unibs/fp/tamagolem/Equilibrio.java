@@ -22,6 +22,7 @@ public class Equilibrio {
 
         numero_elementi = creaNumeroElemento();
         setGrafo();
+        setParametri();
         setEquilibrio();
         Pietra.riempiScorta();
     }
@@ -74,6 +75,13 @@ public class Equilibrio {
                 return i;
 
         return -Costante.C1;
+    }
+
+    private static void setParametri() {
+        TamaGolem.setVita_tamagolem(10 * Grafo.getNodi().size());
+        TamaGolem.setNumero_pietre_goelm((int) Math.ceil((float) (Grafo.getNodi().size() + Costante.C1) / Costante.C3 + Costante.C1));
+        Giocatore.setNumero_golem((int) Math.ceil((float) (Grafo.getNodi().size() - Costante.C1) * (Grafo.getNodi().size() - Costante.C2) / (Costante.C2 * TamaGolem.getNumero_pietre_goelm())));
+        Pietra.setPietre_per_tipo((int) Math.ceil((float) Costante.C2 * TamaGolem.getNumero_pietre_goelm() * Giocatore.getNumero_golem() / Grafo.getNodi().size()));
     }
 
     public static ArrayList<Nodo> getNodi() {

@@ -46,7 +46,7 @@ public class Utente {
         stampa("");
     }
 
-    // stampa la matrice dell' equilibrio, nela caso vi servisse...
+    // stampa la matrice dell' equilibrio, nel caso vi servisse...
     /*public static void stampaMatrice() {
 
         int[][] mat_equi = Grafo.getMat_ad();
@@ -78,8 +78,8 @@ public class Utente {
         stampa(Costante.GOLEM[EstrazioniCasuali.estraiIntero(Costante.C0, Costante.GOLEM.length - Costante.C1)]);
     }
 
-    public static void easterEgg() {
-        stampa("Mi dispiace ma siete dei finti Allievi, non siete degni di sfidarvi in battaglia");
+    public static void easterEgg() { // si descrive da solo
+        stampa(Costante.MSG_EGG);
         System.exit(0);
     }
 }

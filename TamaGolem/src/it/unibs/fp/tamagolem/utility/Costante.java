@@ -1,7 +1,5 @@
 package it.unibs.fp.tamagolem.utility;
 
-import it.unibs.fp.tamagolem.grafo.Grafo;
-
 public class Costante {
 
     // Costanti numeriche
@@ -10,12 +8,6 @@ public class Costante {
     public static final int C2 = 2;
     public static final int C3 = 3;
     public static final int LIMITE = 1000;
-
-    // formule
-    public static final int NUMERO_PIETRE_GOLEM = (int) Math.ceil((float) (Grafo.getNodi().size() + C1) / C3 + C1);
-    public static final int NUMERO_GOLEM = (int) Math.ceil((float) (Grafo.getNodi().size() - C1) * (Grafo.getNodi().size() - C2) / (C2 * NUMERO_PIETRE_GOLEM));
-    public static final int NUMERO_PIETRE_PER_TIPO = (int) Math.ceil((float) Costante.C2 * NUMERO_PIETRE_GOLEM * Costante.NUMERO_GOLEM / Grafo.getNodi().size());
-    public static final int VITA_TAMAGOLEM = 10 * Grafo.getNodi().size();
 
     // Costanti livello difficolta'
     public static final int MAX_FACILE = 5;
@@ -59,6 +51,7 @@ public class Costante {
     public static final String MSG_EQUILIBRIO_IN_CORSO = "Stampa dell'equilibrio in corso...";
     public static final String MSG_START = "ALLENATORI... Ehm... ALLIEVI, siete pronti all'incredibile battaglia??";
     public static final String MSG_GIOCO_IMPAZZIENTE = "Non importa se siete davvero pronti... CHE L'INCREDIBILE BATTAGLIA ABBIA INIZIO!!!";
+    public static final String MSG_EGG = "Vi ho scoperti, siete dei finti allievi, non siete degni di questa magnifica battaglia!";
 
     public static final String[] GOLEM = {"(҂◡̀_◡́)ᕤ", "(ง︡'-'︠)ง", "ᕙ( ︡'︡益'︠)ง", "ヽ༼ ・ ل͜ ・ ༽ﾉ", "(╥︣﹏᷅╥)", "ヽ༼ ಠ益ಠ ༽ﾉ", "ᕦ⊙෴⊙ᕤ", "ᕦ(◉෴◉)ᕥ", "ᕙ(˵ ಠ ਊ ಠ ˵)ᕗ", "༼ ºل͟º༼ ºل͟º༼ ºل͟º༼ ºل͟º ༽ºل͟º ༽ºل͟º ༽ºل͟º ༽"};
 

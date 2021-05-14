@@ -3,7 +3,6 @@
     <output-path>$PROJECT_DIR$/out/artifacts/PgAr2021_Exception_TamaGolem_jar</output-path>
     <root id="archive" name="PgAr2021_Exception_TamaGolem.jar">
       <element id="module-output" name="PgAr2021_Exception_TamaGolem" />
-      <element id="library" level="application" name="UniBSFpLib" />
     </root>
   </artifact>
 </component>

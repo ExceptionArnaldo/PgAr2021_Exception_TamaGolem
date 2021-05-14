@@ -247,12 +247,12 @@ public class InputDati {
         //lettore.nextLine();
     }
 
-    /*public static void pulisciConsole() {
+    public static void pulisciConsole() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
-    }*/
+    }
 
-    public static void pulisciConsole() {
+    /*public static void pulisciConsole() {
         try {
             final String os = System.getProperty("os.name");
 
@@ -264,7 +264,7 @@ public class InputDati {
         } catch (final Exception e) {
             //  Handle any exceptions.
         }
-    }
+    }*/
 
     public static void isInvioPremutoEPulisciConsole(String daOutputtare, String messaggio) {
         isInvioPremuto(daOutputtare, messaggio);

@@ -7,6 +7,7 @@ import it.unibs.fp.tamagolem.utility.Utente;
 
 public class Giocatore {
 
+    private static int numero_golem;
     private String nome;
     private boolean sconfitto = false;
     private int golem_evocati = Costante.C0;
@@ -14,14 +15,14 @@ public class Giocatore {
 
     public void evocaGolem() { // se sono ancora disponibili evocazioni si crea il golem, in caso contrario il giocatore viene sconfitto
         setGolem_evocati(getGolem_evocati() + Costante.C1); // incrementa il numero di golem evocati
-        if (getGolem_evocati() > Costante.NUMERO_GOLEM) { // se non si possono creare altri golem il giocatore perde
+        if (getGolem_evocati() > getNumero_golem()) { // se non si possono creare altri golem il giocatore perde
             setSconfitto(true);
         } else {
             golem = new TamaGolem();
             golem.setNome(InputDati.leggiStringaNonVuota(getNome() + Costante.MSG_NOME_GOLEM));
-            golem.setVita_attuale(Costante.VITA_TAMAGOLEM);
+            golem.setVita_attuale(TamaGolem.getVita_tamagolem());
 
-            Utente.stampa(String.format(Costante.MSG_PREPARE_GOLEM, Costante.NUMERO_PIETRE_GOLEM));
+            Utente.stampa(String.format(Costante.MSG_PREPARE_GOLEM, TamaGolem.getNumero_pietre_goelm()));
             golem.assegnaPietre(); // si assegnano le pietre dalla scorta comune
             Utente.stampa(BelleStringhe.incornicia(String.format(Costante.MSG_GOLEM_CREATO, golem.getNome())));
 
@@ -60,5 +61,13 @@ public class Giocatore {
 
     public void setGolem_evocati(int golem_evocati) {
         this.golem_evocati = golem_evocati;
+    }
+
+    public static int getNumero_golem() {
+        return numero_golem;
+    }
+
+    public static void setNumero_golem(int numero_golem) {
+        Giocatore.numero_golem = numero_golem;
     }
 }
