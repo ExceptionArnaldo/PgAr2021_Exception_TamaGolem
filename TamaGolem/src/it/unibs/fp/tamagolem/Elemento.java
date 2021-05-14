@@ -2,16 +2,17 @@ package it.unibs.fp.tamagolem;
 
 public enum Elemento {
 
-    ROCCIA(0),
-    FUOCO(1),
-    ARIA(2),
-    ACQUA(3),
-    ERBA(4),
-    PIPPOFRANCO(5),
-    TENEBRA(6),
-    SPETTRO(7),
-    SCINTILLA(8),
-    ACCIAIO(9);
+    // MEME ?!
+    DOGE(0),
+    KARMIT(1),
+    PEPPA(2),
+    SPIDERMAN(3),
+    ENRICOPAPI(4),
+    PIPPOBAUDO(5),
+    MEMEMAN(6),
+    PAINHAROLD(7),
+    CLOWN(8),
+    ARNALDO(9);
 
     private int id;
 
