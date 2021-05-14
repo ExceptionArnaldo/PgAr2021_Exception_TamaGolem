@@ -13,10 +13,10 @@ public class Costante {
     public static final int MAX_FACILE = 5;
     public static final int MAX_MEDIO = 8;
 
-    public static final String MSG_FACILE = "Facile";
-    public static final String MSG_MEDIO = "Medio";
-    public static final String MSG_DIFFICILE = "Difficile";
-    public static final String MSG_SCELTA_DIFFICOLTA = "Scelta difficolta'";
+    public static final String MSG_FACILE = "Principiante";
+    public static final String MSG_MEDIO = "Difficile";
+    public static final String MSG_DIFFICILE = "Bestiale";
+    public static final String MSG_SCELTA_DIFFICOLTA = "Scelta attentamente la difficolta'";
 
     // Messaggi vari
     public static final String MSG_BENVENUTI = "BENVENUTI IN TAMAGOLEM ! ! !";

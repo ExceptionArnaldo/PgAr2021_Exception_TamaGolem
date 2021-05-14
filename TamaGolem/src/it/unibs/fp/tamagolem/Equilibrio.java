@@ -51,9 +51,9 @@ public class Equilibrio {
 
     // set l'equilibrio degli elementi
     private static void setEquilibrio() {
-        for (int i = Costante.C0; i < grafo.getNodi().size(); i++) {
-            for (int j = i; j < grafo.getNodi().size(); j++) {
-                grafo.setPeso(grafo.getNodi().get(i), grafo.getNodi().get(j));
+        for (int i = Costante.C0; i < Grafo.getNodi().size(); i++) {
+            for (int j = i; j < Grafo.getNodi().size(); j++) {
+                grafo.setPeso(Grafo.getNodi().get(i), Grafo.getNodi().get(j));
             }
         }
     }

@@ -37,10 +37,6 @@ public class Pietra {
         return scorta_comune;
     }
 
-    public static int getPietre_per_tipo() {
-        return pietre_per_tipo;
-    }
-
     public static void setPietre_per_tipo(int pietre_per_tipo) {
         Pietra.pietre_per_tipo = pietre_per_tipo;
     }
