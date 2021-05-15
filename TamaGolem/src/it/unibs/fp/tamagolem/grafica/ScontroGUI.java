@@ -31,7 +31,7 @@ public class ScontroGUI {
         frame_scontro = Componenti.creaFrame(1050, 540);
         frame_scontro.setLayout(null);
 
-        sfondo_label = new JLabel("", new ImageIcon("C:\\Users\\User\\Desktop\\sfondo.jpg"), JLabel.CENTER);
+        sfondo_label = new JLabel("", new ImageIcon("Images\\sfondo.jpg"), JLabel.CENTER);
         sfondo_label.setBounds(0, 0, 1050, 540);
         frame_scontro.add(sfondo_label);
 
@@ -46,7 +46,7 @@ public class ScontroGUI {
             }});
 
         //immagine del golem 1
-        ImageIcon image_golem1 = new ImageIcon("C:\\Users\\User\\Desktop\\image.png");
+        ImageIcon image_golem1 = new ImageIcon("Images\\image.png");
         JLabel golem1_label = Componenti.creaImageGolem(image_golem1, 200, 250);
         sfondo_label.add(golem1_label);
 
@@ -55,7 +55,7 @@ public class ScontroGUI {
         sfondo_label.add(vita1);
 
         //immagine del golem 2
-        ImageIcon image_golem2 = new ImageIcon("C:\\Users\\User\\Desktop\\golem.png");
+        ImageIcon image_golem2 = new ImageIcon("Images\\golem.png");
         JLabel golem2_label = Componenti.creaImageGolem(image_golem2, 600, 80);
         sfondo_label.add(golem2_label);
 
